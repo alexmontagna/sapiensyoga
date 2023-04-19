@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sapiens.yoga Vite + React + TS</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sapiens.Yoga Classes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="flex flex-col h-screen">
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold text-gray-800">Yoga Classes</h1>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto flex flex-col justify-center items-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Yoga Classes Will Be Back Soon</h2>
+        <p class="text-gray-700 text-lg mb-4">We are currently working on improving our classes to provide you with the best experience possible. Thank you for your patience!</p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Notify Me</a>
+    </main>
+    <footer class="bg-gray-200 py-4">
+        <div class="container mx-auto text-center text-gray-700">
+            &copy; 2023 Yoga Classes. All rights reserved.
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+    <!-- <div id="root"></div> -->
+    <!-- <script type="module" src="/src/main.tsx"></script> -->
   </body>
 </html>
