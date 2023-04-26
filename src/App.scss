@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #eee;
+  }
+  .read-the-docs {
+    color: #aaa;
+  }
+  .App {
+    color: #eee;
+  }
+}
