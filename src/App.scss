@@ -64,6 +64,10 @@
   color: #888;
 }
 
+body {
+  background-color: red;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #222;
