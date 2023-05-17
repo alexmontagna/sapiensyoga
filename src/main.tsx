@@ -9,6 +9,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
     <YogaComponent />
-    <ColorToggle />
+    {/* <ColorToggle /> */}
   </React.StrictMode>,
 )
