@@ -7,3 +7,44 @@ body {
   height: 100vh;
   // background-color: #f7fafc;
 }
+
+:root {
+  font-family: 'Gudea', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-block-start: 0.2rem;
+  line-height: 1.6;
+}
+
+main {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  padding-inline: 2rem;
+  overflow: scroll;
+  height: 100vh;
+}
+
+main>* {
+  scroll-snap-align: start;
+  /* scroll-snap-stop: always; */
+  scroll-snap-stop: normal;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main>*>* {
+  max-width: 68ch;
+}

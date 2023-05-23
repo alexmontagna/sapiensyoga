@@ -1,27 +1,66 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './YogaComponent.scss'
 
 function YogaComponent() {
     const [count, setCount] = useState(0)
     return (
         <>
-            <header className="bg-rose-500 shadow-md py-4">
-                <div className="container mx-auto flex justify-between items-center px-4">
-                    <h1 className="text-2xl font-bold text-white">Sapiens.Yoga Classes</h1>
-                </div>
-            </header>
-            <main className="flex-grow container mx-auto flex flex-col justify-center items-center">
-                <h2 className="text-3xl font-bold text-rose-900 mb-4">Our Yoga Classes Will Be Back Soon</h2>
-                <p className="text-rose-800 text-lg mb-4">We are currently working on improving our classes to provide you with the best experience possible. Thank you for your patience!</p>
-                <a href="#" className="bg-rose-600 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded">Notify Me</a>
+            <main>
+                <header>
+                    <h1>sapiens.yoga</h1>
+                    <span>simple wellness for our species</span>
+                </header>
+                <section>
+                    <h2>
+                        what's sapiens yoga all about?
+                    </h2>
+                    <p>
+                        sapiens yoga is a fresh take on ancient traditions, adapted for our modern lives.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        why choose sapiens yoga?
+                    </h2>
+                    <p>
+                        this project is here to inspire those seeking self-development in a contemporary way.
+                    </p>
+                    <p>
+                        we've learned so much over thousands of years. sapiens yoga combines the best of the past in a sanskrit-less
+                        fashion.
+                    </p>
+                    <p>
+                        it's high time for a label that offers the rich history of yoga while embracing all the amazing knowledge we've
+                        gained in recent centuries.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        what's the method like
+                    </h2>
+                    <p>
+                        focused on free body exercises and simple breathing techniques, the method aims to enhance your emotions and
+                        thoughts through enjoyable mindfulness and relaxation moments. it also seeks to improve wellbeing by promoting a
+                        healthy, flexible, and strong body, ultimately leading to organic happiness.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        how can i give it a try?
+                    </h2>
+                    <p>
+                        for now, you can experience sapiens yoga through private classes in milan, retreats in italy, or online groups.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        who's behind sapiens yoga's master mind?
+                    </h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lSvKNNtkUSU" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </section>
             </main>
-            <footer className="bg-rose-300 py-4">
-                <div className="container mx-auto text-center text-rose-800">
-                    &copy; 2023 Sapiens.Yoga. All rights reserved.
-                </div>
-            </footer>
         </>
     )
 }
