@@ -8,14 +8,14 @@ function YogaComponent() {
             <main>
                 <header>
                     <h1>sapiens.yoga</h1>
-                    <span>simple wellness for our species</span>
+                    <span>simple techniques for humans</span>
                 </header>
                 <section>
                     <h2>
                         what's sapiens yoga all about?
                     </h2>
                     <p>
-                        sapiens yoga is a fresh take on ancient traditions, adapted for our modern lives.
+                        it's a fresh take on ancient yoga adapted for post-pandemic AI-blooming humankind.
                     </p>
                 </section>
                 <section>
@@ -23,14 +23,14 @@ function YogaComponent() {
                         why choose sapiens yoga?
                     </h2>
                     <p>
-                        this project is here to inspire those seeking self-development in a contemporary way.
+                        because it's good.
                     </p>
                     <p>
-                        we've learned so much over thousands of years. sapiens yoga combines the best of the past in a sanskrit-less
-                        fashion.
+                        and because it's simple.
                     </p>
                     <p>
-                        it's high time for a label that offers the rich history of yoga while embracing all the amazing knowledge we've
+                        humans learned so much over thousands of years. sapiens yoga combines the best of the past in a sanskrit-less
+                        fashion. it's high time for a label that offers the rich history of yoga while embracing all the amazing knowledge we've
                         gained in recent centuries.
                     </p>
                 </section>
