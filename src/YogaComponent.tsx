@@ -10,7 +10,7 @@ function YogaComponent() {
                     <h1>sapiens.yoga</h1>
                     <span>simple techniques for humans</span>
                 </header>
-                <section>
+                <section data-section="what's sapiens yoga all about?">
                     <h2>
                         what's sapiens yoga all about?
                     </h2>
@@ -18,7 +18,7 @@ function YogaComponent() {
                         it's a fresh take on ancient yoga adapted for post-pandemic AI-blooming humankind.
                     </p>
                 </section>
-                <section>
+                <section data-section="why choose sapiens yoga?">
                     <h2>
                         why choose sapiens yoga?
                     </h2>
@@ -34,7 +34,7 @@ function YogaComponent() {
                         gained in recent centuries.
                     </p>
                 </section>
-                <section>
+                <section data-section="what's the method like">
                     <h2>
                         what's the method like
                     </h2>
@@ -44,7 +44,7 @@ function YogaComponent() {
                         healthy, flexible, and strong body, ultimately leading to organic happiness.
                     </p>
                 </section>
-                <section>
+                <section data-section="how can i give it a try?">
                     <h2>
                         how can i give it a try?
                     </h2>
@@ -52,9 +52,9 @@ function YogaComponent() {
                         for now, you can experience sapiens yoga through private classes in milan, retreats in italy, or online groups.
                     </p>
                 </section>
-                <section>
+                <section data-section="who's behind sapiens yoga?">
                     <h2>
-                        who's behind sapiens yoga's master mind?
+                        who's behind sapiens yoga?
                     </h2>
                     <iframe style={{width: "560px", height: "315px"}} src="https://www.youtube.com/embed/lSvKNNtkUSU" title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
