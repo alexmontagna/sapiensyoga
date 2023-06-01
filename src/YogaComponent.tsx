@@ -56,6 +56,9 @@ function YogaComponent() {
                     <h2>
                         who's behind sapiens yoga?
                     </h2>
+                    <p>
+                        Me.
+                    </p>
                     <iframe style={{width: "560px", height: "315px"}} src="https://www.youtube.com/embed/lSvKNNtkUSU" title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen></iframe>
