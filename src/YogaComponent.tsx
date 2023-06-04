@@ -59,7 +59,7 @@ function YogaComponent() {
                     <p>
                         Me.
                     </p>
-                    <iframe style={{width: "560px", height: "315px"}} src="https://www.youtube.com/embed/lSvKNNtkUSU" title="YouTube video player"
+                    <iframe style={{width: "560px", height: "315px", display: "none"}} src="https://www.youtube.com/embed/lSvKNNtkUSU" title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen></iframe>
                 </section>
