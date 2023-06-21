@@ -49,7 +49,7 @@ function YogaComponent() {
                         how can i give it a try?
                     </h2>
                     <p>
-                        for now, you can experience sapiens yoga through private classes in milan, retreats in italy, or online groups.
+                        for now, you can experience sapiens yoga through private classes in milan, retreats in italy or online groups.
                     </p>
                 </section>
                 <section data-section="who's behind sapiens yoga?">
