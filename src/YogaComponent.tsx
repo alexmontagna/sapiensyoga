@@ -34,7 +34,7 @@ function YogaComponent() {
                         gained in recent centuries.
                     </p>
                 </section>
-                <section data-section="what's the method like">
+                <section data-section="what's the method like?">
                     <h2>
                         what's the method like
                     </h2>
