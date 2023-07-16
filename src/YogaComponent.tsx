@@ -31,7 +31,7 @@ function YogaComponent() {
                     <p>
                         humans learned so much over thousands of years. sapiens yoga combines the best of the past in a sanskrit-less
                         fashion. it's high time for a label that offers the rich history of yoga while embracing all the amazing knowledge we've
-                        gained in recent centuries.
+                        gained in the last centuries.
                     </p>
                 </section>
                 <section data-section="what's the method like?">
