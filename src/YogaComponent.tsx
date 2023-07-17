@@ -57,7 +57,7 @@ function YogaComponent() {
                         who's behind sapiens yoga?!
                     </h2>
                     <p>
-                        Me.
+                        me. alex.
                     </p>
                     <iframe
                         style={{width: "560px", height: "315px", display: "none"}}
