@@ -27,7 +27,7 @@ function ColorToggle() {
     return (
         <>
             <div className="color-toggle">
-                <button className="toggle color-toggle__button">change</button>
+                <button className="toggle color-toggle__button">change color</button>
             </div>
         </>
     )
