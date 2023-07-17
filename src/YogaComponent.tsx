@@ -54,7 +54,7 @@ function YogaComponent() {
                 </section>
                 <section data-section="who's behind sapiens yoga?">
                     <h2>
-                        who's behind sapiens yoga?!
+                        who's behind sapiens yoga?
                     </h2>
                     <p>
                         me. alex.
