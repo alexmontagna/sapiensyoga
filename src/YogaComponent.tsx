@@ -3,6 +3,9 @@ import './YogaComponent.scss'
 
 function YogaComponent() {
     const [count, setCount] = useState(0)
+    setTimeout(() => {
+        document.querySelector('[data-delete]')?.remove();
+    }, 3000);
     return (
         <>
             <main>
@@ -52,7 +55,7 @@ function YogaComponent() {
                         for now, you can experience sapiens yoga through private classes in milan, retreats in italy or online groups.
                     </p>
                 </section>
-                <section data-section="who's behind sapiens yoga?">
+                <section data-section="who's behind sapiens yoga?" data-delete>
                     <h2>
                         who's behind sapiens yoga?
                     </h2>
