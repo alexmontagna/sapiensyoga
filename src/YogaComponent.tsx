@@ -15,7 +15,7 @@ function YogaComponent() {
                 </header>
                 <section data-section="what's sapiens yoga all about?">
                     <h2>
-                        what's sapiens yoga all about?
+                        sapiens yoga?
                     </h2>
                     <p>
                         it's a fresh take on ancient yoga adapted for post-pandemic AI-blooming humankind.
@@ -26,15 +26,11 @@ function YogaComponent() {
                         why choose sapiens yoga?
                     </h2>
                     <p>
-                        because it's good.
+                        because it's good, it works, and it's fun. it's also for everyone. and it's simple. and it's good. and it's fun.
                     </p>
                     <p>
-                        and because it's simple.
-                    </p>
-                    <p>
-                        humans learned so much over thousands of years. sapiens yoga combines the best of the past in a sanskrit-less
-                        fashion. it's high time for a label that offers the rich history of yoga while embracing all the amazing knowledge we've
-                        gained in the last centuries.
+                        humans learned so much over thousands of years. it's time for a label that offers the best of the past in a sanskrit-less
+                        fashion while embracing all the amazing knowledge we've conquered in the last centuries.
                     </p>
                 </section>
                 <section data-section="what's the method like?">
