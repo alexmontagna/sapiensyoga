@@ -48,7 +48,7 @@ function YogaComponent() {
                         how can i give it a try?
                     </h2>
                     <p>
-                        for now, you can experience sapiens yoga through private classes in milan, retreats in italy or online groups.
+                        for now, you can experience sapiens yoga through private classes in milan, retreats in italy and south of france and in online groups.
                     </p>
                 </section>
                 <section data-section="who's behind sapiens yoga?" data-delete>
@@ -56,7 +56,7 @@ function YogaComponent() {
                         who's behind sapiens yoga?
                     </h2>
                     <p>
-                        me. alex.
+                        me, alex.
                     </p>
                     <iframe
                         style={{width: "560px", height: "315px", display: "none"}}
