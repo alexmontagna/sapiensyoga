@@ -8,7 +8,7 @@ function YogaComponent() {
             <main>
                 <header>
                     <h1>sapiens.yoga</h1>
-                    <span>simple techniques for humans</span>
+                    <span>techniques for humans</span>
                 </header>
                 <section data-section="what's sapiens yoga all about?">
                     <h2>
