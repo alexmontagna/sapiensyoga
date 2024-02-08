@@ -7,11 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sapiens.yoga 3</title>
     <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" sizes="any">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <script type="module" crossorigin src="/src/main.tsx"></script>
     <style>
         *,
         *::before,
@@ -23,11 +18,31 @@
             margin: 0;
         }
 
+        :root {
+            --p-max-width: 65ch;
+        }
+
         html {
             color-scheme: light dark;
-            font-family: sans-serif;
+            font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+            font-weight: normal;
             line-height: 1.6;
         }
+
+        @media (prefers-color-scheme: light) {
+            html {
+                color: #222;
+                background-color: #eee;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html {
+                color: #eee;
+                background-color: #222;
+            }
+        }
+
 
         body {
             padding: 1.6rem;
@@ -68,11 +83,9 @@
                 <span>simple techniques for humans</span>
             </header>
             <section data-section="what's sapiens yoga all about?">
-                <h2>
-                    sapiens yoga?
-                </h2>
                 <p>
-                    it's a fresh take on ancient yoga adapted for post-pandemic AI-blooming humankind.
+                    sapiens yoga is a fresh take on ancient hindi techniques adapted for post-pandemic AI-blooming
+                    humankind.
                 </p>
             </section>
             <section data-section="why choose sapiens yoga?">
@@ -115,7 +128,7 @@
                     who's behind sapiens yoga?
                 </h2>
                 <p>
-                    me, alex montagna
+                    alex montagna
                 </p>
 
             </section>
