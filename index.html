@@ -1,144 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>sapiens.yoga</title>
-    <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" sizes="any">
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        * {
-            margin: 0;
-        }
-
-        :root {
-            --p-max-width: 65ch;
-        }
-
-        html {
-            color-scheme: light dark;
-            color: light-dark(black, white);
-            background-color: light-dark(white, black);
-            font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-            font-weight: normal;
-            line-height: 1.6;
-        }
-
-        @media (prefers-color-scheme: light) {
-            html {
-                color: #222;
-                background-color: #eee;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>sapiens.yoga</title>
+        <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" sizes="any" />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
             }
-        }
 
-        @media (prefers-color-scheme: dark) {
-            html {
-                color: #eee;
-                background-color: #222;
+            * {
+                margin: 0;
             }
-        }
 
+            :root {
+                --p-max-width: 65ch;
+            }
 
-        body {
-            padding: 1.6rem;
-        }
+            html {
+                color-scheme: light dark;
+                color: light-dark(black, white);
+                background-color: light-dark(white, black);
+                font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+                font-weight: normal;
+                line-height: 1.6;
+            }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+            @media (prefers-color-scheme: light) {
+                html {
+                    color: #222;
+                    background-color: #eee;
+                }
+            }
 
-        ul,
-        ol {
-            margin-block-end: 1rem;
-        }
+            @media (prefers-color-scheme: dark) {
+                html {
+                    color: #eee;
+                    background-color: #222;
+                }
+            }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            text-wrap: balance;
-        }
+            body {
+                padding: 1.6rem;
+            }
 
-        p,
-        li {
-            max-width: var(--p-max-width, 65ch);
-            text-wrap: pretty;
-        }
+            img {
+                max-width: 100%;
+                display: block;
+            }
 
-        main {
-            max-width: 65ch;
-            margin: 0 auto;
-        }
+            ul,
+            ol {
+                margin-block-end: 1rem;
+            }
 
-        section {
-            margin-block-end: 2rem;
-        }
-    </style>
-</head>
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                text-wrap: balance;
+            }
 
-<body>
-    <div id="root">
-        <main>
-            <header>
-                <h1>sapiens.yoga</h1>
-                <span>simple techniques for humans</span>
-            </header>
-            <section data-section="what's sapiens yoga all about?">
-                <p>
-                    sapiens yoga is a fresh take on ancient hindi techniques adapted for post-pandemic AI-blooming
-                    humankind.
-                </p>
-            </section>
-            <section data-section="why choose sapiens yoga?">
-                <h2>
-                    why choose sapiens yoga?
-                </h2>
-                <p>
-                    because it's simple, strong and pleasant to practice. it's a yoga for humans, not for gods.
-                </p>
-                <p>
-                    it offers brings the past in a sanskrit-less
-                    fashion while embracing modern knowledge.
-                </p>
-            </section>
-            <section data-section="what's the method like?">
-                <h2>
-                    what's the method like
-                </h2>
-                <p>
-                    it focuses on free body exercises and efficient breathing techniques. then, it aims to enhance your
-                    thoughts and emotions through enjoyable mindfulness and relaxation activities.
-                    the goal is to develop organic happiness and a sense of connection where you feel in peace with your Self.
-                </p>
-            </section>
-            <section data-section="how can i give it a try?">
-                <h2>
-                    how can i give it a try?
-                </h2>
-                <p>
-                    for now, you can experience sapiens yoga through private classes in milan, and in <a href="https://www.alexmontagna.it/yoga" target="_blank">online groups</a>.
-                </p>
-            </section>
-            <section data-section="who's behind sapiens yoga?" data-delete>
-                <h2>
-                    who's behind sapiens yoga?
-                </h2>
-                <p>
-                    sapiens yoga is a project by <a href="https://www.instagram.com/montagna_alex" target="_blank">alexandre</a>, a human who loves yoga and wants to share it with the world.
-                </p>
-            </section>
-        </main>
-    </div>
-</body>
+            p,
+            li {
+                max-width: var(--p-max-width, 65ch);
+                text-wrap: pretty;
+            }
 
+            main {
+                max-width: 65ch;
+                margin: 0 auto;
+            }
+
+            section {
+                margin-block-end: 2rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root">
+            <main>
+                <header>
+                    <h1>sapiens.yoga</h1>
+                    <span>simple techniques for humans</span>
+                </header>
+                <section data-section="what's sapiens yoga all about?">
+                    <p>sapiens yoga is a fresh take on ancient hindu techniques adapted for post-pandemic ai-blooming humankind.</p>
+                </section>
+                <section data-section="why choose sapiens yoga?">
+                    <h2>why choose sapiens yoga?</h2>
+                    <p>because it's simple, strong and pleasant to practice. it's a yoga for humans, not for gods.</p>
+                    <p>it brings the past in a sanskrit-less fashion while embracing modern knowledge.</p>
+                </section>
+                <section data-section="what's the method like?">
+                    <h2>what's the method like</h2>
+                    <p>
+                        it focuses on free body exercises and efficient breathing techniques (nothing new under the sun). the difference is <em>how</em> it is done: mindfulness techniques are used
+                        <strong>during</strong> the yoga poses - and that changes... everything! then, it aims to enhance your thoughts and emotions through enjoyable mindfulness and relaxation
+                        activities. the goal is to develop organic happiness and a sense of connection where you feel in peace with your Self.
+                    </p>
+                </section>
+                <section data-section="how can i give it a try?">
+                    <h2>how can i give it a try?</h2>
+                    <p>for now, you can experience sapiens yoga through private classes in milan, and in <a href="https://www.alexmontagna.it/yoga" target="_blank">online groups</a>.</p>
+                </section>
+                <section data-section="who's behind sapiens yoga?" data-delete>
+                    <h2>who's behind sapiens yoga?</h2>
+                    <p>sapiens yoga is a project by <a href="https://www.instagram.com/montagna_alex" target="_blank">alexandre</a>, a human who loves yoga and wants to share it with the world.</p>
+                </section>
+            </main>
+        </div>
+    </body>
 </html>
