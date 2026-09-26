@@ -87,6 +87,57 @@
                 font-weight: 300;
                 font-style: italic;
             }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+                gap: 1.6rem 1rem;
+                padding: 0;
+                list-style: none;
+
+                & li:nth-child(odd):last-child {
+                    grid-column: 1 / -1;
+                }
+
+                & figure {
+                    display: grid;
+                    gap: 0.5rem;
+                }
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 3 / 2;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    background-color: color-mix(in oklab, currentColor 10%, transparent);
+                    box-shadow: 0 1rem 2rem -1.25rem light-dark(rgb(0 0 0 / 0.45), transparent);
+                }
+
+                & figcaption {
+                    font-size: 0.9rem;
+                    font-style: italic;
+                    color: color-mix(in oklab, currentColor 75%, transparent);
+                    text-wrap: balance;
+                }
+            }
+
+            @media screen and (prefers-reduced-motion: no-preference) {
+                @supports (animation-timeline: view()) {
+                    .gallery figure {
+                        animation: rise linear both;
+                        animation-timeline: view();
+                        animation-range: entry 0% entry 90%;
+                    }
+                }
+            }
+
+            @keyframes rise {
+                from {
+                    opacity: 0;
+                    translate: 0 1.5rem;
+                }
+            }
         </style>
     </head>
 
@@ -111,6 +162,30 @@
                     </p>
                     <p>then, it aims to enhance your thoughts and emotions through enjoyable mindfulness and relaxation activities.</p>
                     <p>the goal is to develop organic happiness and a sense of connection where you feel in peace with yourself and your Self.</p>
+                </section>
+                <section data-section="what does it look like?">
+                    <ul class="gallery" role="list" aria-label="photos">
+                        <li>
+                            <figure>
+                                <picture>
+                                    <source
+                                        type="image/avif"
+                                        srcset="photos/alex-teaching-italy-600.avif 600w, photos/alex-teaching-italy-1086.avif 1086w"
+                                        sizes="auto, (min-width: 40rem) 36rem, calc(100vw - 3.2rem)"
+                                    />
+                                    <img
+                                        src="photos/alex-teaching-italy-1086.jpg"
+                                        alt="in a large hall with a stage, alex sits cross-legged on a mat while about fifteen people lie on their backs on blue mats around him, relaxing."
+                                        width="1086"
+                                        height="724"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                                <figcaption>alex teaching sapiens yoga in italy</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
                 </section>
                 <section data-section="how can i give it a try?">
                     <p>for now, you can experience sapiens yoga through private classes in milan, and in <a href="https://www.alexmontagna.it/yoga" target="_blank">online groups</a>.</p>
