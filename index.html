@@ -1,205 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <title>sapiens.yoga</title>
-        <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" sizes="any" />
-        <style>
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
-
-            * {
-                margin: 0;
-            }
-
-            :root {
-                --p-max-width: 65ch;
-            }
-
-            html {
-                color-scheme: light dark;
-                color: light-dark(black, white);
-                background-color: light-dark(white, black);
-                font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
-                font-weight: normal;
-                line-height: 1.6;
-            }
-
-            @media (prefers-color-scheme: light) {
-                html {
-                    color: #222;
-                    background-color: #eee;
-                }
-            }
-
-            @media (prefers-color-scheme: dark) {
-                html {
-                    color: #eee;
-                    background-color: #222;
-                }
-            }
-
-            body {
-                padding: 1.6rem;
-            }
-
-            img {
-                max-width: 100%;
-                display: block;
-            }
-
-            ul,
-            ol {
-                margin-block-end: 1rem;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                text-wrap: balance;
-            }
-
-            p,
-            li {
-                max-width: var(--p-max-width, 65ch);
-                text-wrap: pretty;
-            }
-
-            main {
-                max-width: 65ch;
-                margin: 0 auto;
-            }
-
-            header, section {
-                margin-block-end: 2rem;
-            }
-
-            header span {
-                font-size: 1.2rem;
-                font-weight: 300;
-                font-style: italic;
-            }
-
-            .gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-                gap: 1.6rem 1rem;
-                padding: 0;
-                list-style: none;
-
-                & li:nth-child(odd):last-child {
-                    grid-column: 1 / -1;
-                }
-
-                & figure {
-                    display: grid;
-                    gap: 0.5rem;
-                }
-
-                & img {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 3 / 2;
-                    object-fit: cover;
-                    border-radius: 0.5rem;
-                    background-color: color-mix(in oklab, currentColor 10%, transparent);
-                    box-shadow: 0 1rem 2rem -1.25rem light-dark(rgb(0 0 0 / 0.45), transparent);
-                }
-
-                & figcaption {
-                    font-size: 0.9rem;
-                    font-style: italic;
-                    color: color-mix(in oklab, currentColor 75%, transparent);
-                    text-wrap: balance;
-                }
-            }
-
-            @media screen and (prefers-reduced-motion: no-preference) {
-                @supports (animation-timeline: view()) {
-                    .gallery figure {
-                        animation: rise linear both;
-                        animation-timeline: view();
-                        animation-range: entry 0% entry 90%;
-                    }
-                }
-            }
-
-            @keyframes rise {
-                from {
-                    opacity: 0;
-                    translate: 0 1.5rem;
-                }
-            }
-        </style>
+        <meta name="description" content="sapiens yoga: biological techniques for humans. simple, strong and pleasant to practice." />
+        <link rel="canonical" href="https://sapiens.yoga/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sapiens.yoga/" />
+        <meta property="og:title" content="sapiens.yoga" />
+        <meta property="og:description" content="biological techniques for humans" />
+        <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
+        <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="stylesheet" href="/site.css" />
     </head>
 
     <body>
-        <div id="root">
-            <main>
-                <header>
-                    <h1>sapiens.yoga</h1>
-                    <span>biological techniques for humans</span>
-                </header>
-                <section data-section="what's sapiens yoga all about?">
-                    <p>sapiens yoga is an approach that is based on ancient Indian techniques.</p>
-                </section>
-                <section data-section="why choose sapiens yoga?">
-                    <p>it's simple, strong and pleasant to practice. it's a yoga for adult humans that want to become flexible, focused and in peace, not acrobats.</p>
-                    <p>it teaches the tradition while embracing modern human knowledge.</p>
-                </section>
-                <section data-section="what's the method like?">
-                    <p>
-                        the practice focuses on free body exercises and breathing techniques (nothing new under the sun). maybe you will notice that the uniqueness of the method is <em>how</em> it is
-                        done: mindfulness techniques are used <strong>during</strong> the body positions.
-                    </p>
-                    <p>then, it aims to enhance your thoughts and emotions through enjoyable mindfulness and relaxation activities.</p>
-                    <p>the goal is to develop organic happiness and a sense of connection where you feel in peace with yourself and your Self.</p>
-                </section>
-                <section data-section="what does it look like?">
-                    <ul class="gallery" role="list" aria-label="photos">
-                        <li>
-                            <figure>
-                                <picture>
-                                    <source
-                                        type="image/avif"
-                                        srcset="photos/alex-teaching-italy-600.avif 600w, photos/alex-teaching-italy-1086.avif 1086w"
-                                        sizes="auto, (min-width: 40rem) 36rem, calc(100vw - 3.2rem)"
-                                    />
-                                    <img
-                                        src="photos/alex-teaching-italy-1086.jpg"
-                                        alt="in a large hall with a stage, alex sits cross-legged on a mat while about fifteen people lie on their backs on blue mats around him, relaxing."
-                                        width="1086"
-                                        height="724"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                </picture>
-                                <figcaption>alex teaching sapiens yoga in italy</figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-                </section>
-                <section data-section="how can i give it a try?">
-                    <p>for now, you can experience sapiens yoga through private classes in milan, and in <a href="https://www.alexmontagna.it/yoga" target="_blank">online groups</a>.</p>
-                </section>
-                <section data-section="who's behind sapiens yoga?" data-delete>
-                    <p>sapiens yoga is a project by <a href="https://www.instagram.com/montagna_alex" target="_blank">alexandre</a>, a human who loves yoga and wants to share it with the world.</p>
-                </section>
-                <section data-section="what about sapiens.bio?">
-                    <p>sapiens yoga people are eligible to be part of the <a href="https://sapiens.bio" target="_blank">Sapiens.bio</a> project.</p>
-                </section>
-                <section data-section="how can i reach alex?">
-                    <p>want to reach alex? write to <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a></p>
-                </section>
-            </main>
-        </div>
+        <main class="page home">
+            <header class="hero">
+                <div class="breath" aria-hidden="true">
+                    <div class="breath__sun"></div>
+                    <p class="breath__cue"><span>breathe in</span><span>breathe out</span></p>
+                </div>
+                <h1>sapiens.yoga</h1>
+                <p class="hero__lead">biological techniques for humans</p>
+            </header>
+            <section data-section="what's sapiens yoga all about?">
+                <p>sapiens yoga is an approach that is based on ancient Indian techniques.</p>
+            </section>
+            <section data-section="why choose sapiens yoga?">
+                <p>it's simple, strong and pleasant to practice. it's a yoga for adult humans that want to become flexible, focused and in peace, not acrobats.</p>
+                <p>it teaches the tradition while embracing modern human knowledge.</p>
+            </section>
+            <section data-section="what's the method like?">
+                <p>
+                    the practice focuses on free body exercises and breathing techniques (nothing new under the sun). maybe you will notice that the uniqueness of the method is <em>how</em> it is
+                    done: mindfulness techniques are used <strong>during</strong> the body positions.
+                </p>
+                <p>then, it aims to enhance your thoughts and emotions through enjoyable mindfulness and relaxation activities.</p>
+                <p>the goal is to develop organic happiness and a sense of connection where you feel in peace with yourself and your Self.</p>
+            </section>
+            <section class="photo" data-section="what does it look like?">
+                <figure>
+                    <picture>
+                        <source
+                            type="image/avif"
+                            srcset="photos/alex-teaching-italy-600.avif 600w, photos/alex-teaching-italy-1086.avif 1086w"
+                            sizes="auto, (min-width: 40rem) 36rem, calc(100vw - 2.5rem)"
+                        />
+                        <img
+                            src="photos/alex-teaching-italy-1086.jpg"
+                            alt="in a large hall with a stage, alex sits cross-legged on a mat while about fifteen people lie on their backs on blue mats around him, relaxing."
+                            width="1086"
+                            height="724"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
+                    <figcaption>alex teaching sapiens yoga in italy</figcaption>
+                </figure>
+            </section>
+            <section data-section="how can i give it a try?">
+                <p>for now, you can experience sapiens yoga through private classes in milan, and in <a href="/online/">online groups</a>.</p>
+                <a class="door" href="/online/" lang="it">
+                    <span class="door__title">pratica online</span>
+                    <span class="door__note">orari, pacchetti e la lista per sapere quando si riparte</span>
+                </a>
+            </section>
+            <section data-section="who's behind sapiens yoga?" data-delete>
+                <p>sapiens yoga is a project by <a href="https://www.instagram.com/montagna_alex" target="_blank" rel="noopener">alexandre</a>, a human who loves yoga and wants to share it with the world.</p>
+            </section>
+            <section data-section="what about sapiens.bio?">
+                <p>sapiens yoga people are eligible to be part of the <a href="https://sapiens.bio" target="_blank" rel="noopener">Sapiens.bio</a> project.</p>
+            </section>
+            <section data-section="how can i reach alex?">
+                <p>want to reach alex? write to <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a></p>
+            </section>
+        </main>
     </body>
 </html>
