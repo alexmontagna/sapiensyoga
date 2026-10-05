@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>Privacy | sapiens.yoga</title>
+        <meta name="description" content="What sapiens.yoga counts and what the online signup keeps. Cosa conta sapiens.yoga e cosa conserva l’iscrizione online." />
+        <link rel="canonical" href="https://sapiens.yoga/privacy/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sapiens.yoga/privacy/" />
+        <meta property="og:title" content="Privacy | sapiens.yoga" />
+        <meta property="og:description" content="What sapiens.yoga counts and what the online signup keeps. Cosa conta sapiens.yoga e cosa conserva l’iscrizione online." />
+        <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
+        <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="stylesheet" href="/site.css" />
+        <script>
+            document.documentElement.classList.add("js");
+            // The address /privacy/#non-contarmi (the link the dashboard offers on a phone) makes this browser stop being
+            // counted. It runs here, before the counter below, which only starts once the page is parsed.
+            if (location.hash === "#non-contarmi") {
+                try {
+                    localStorage.setItem("bussola-stats", "off");
+                } catch {
+                    /* storage blocked: the page says so below */
+                }
+            }
+        </script>
+        <script src="https://bussola.company/admin/stats.js" defer></script>
+    </head>
+
+    <body>
+        <nav class="topbar page" aria-label="sapiens.yoga">
+            <a href="/">sapiens.yoga</a>
+        </nav>
+
+        <main class="page privacy">
+            <header class="hero hero--text">
+                <h1>privacy</h1>
+                <p class="hero__lead">what is counted here, and what is kept</p>
+                <p class="hero__lead hero__lead--it" lang="it">cosa si conta qui, e cosa si conserva</p>
+                <p class="langs">
+                    <a href="#english" lang="en">English</a>
+                    <a href="#italiano" lang="it">Italiano</a>
+                </p>
+            </header>
+
+            <section id="non-contarmi" class="letter choice" aria-label="Counting visits · Conteggio delle visite">
+                <label class="switch" for="dont-count">
+                    <input id="dont-count" type="checkbox" role="switch" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                    <span class="switch__text">
+                        <span lang="en">Don’t count my visits</span>
+                        <span lang="it">Non contare le mie visite</span>
+                    </span>
+                </label>
+                <p class="choice__state" role="status" aria-live="polite">
+                    <span lang="en" data-state="en"></span>
+                    <span lang="it" data-state="it"></span>
+                </p>
+                <noscript>
+                    <p class="choice__state">
+                        <span lang="en">Without JavaScript, your visits are not counted.</span>
+                        <span lang="it">Senza JavaScript le tue visite non vengono contate.</span>
+                    </p>
+                </noscript>
+            </section>
+
+            <section id="english" lang="en" class="notice" aria-labelledby="en-title">
+                <h2 id="en-title">In English</h2>
+
+                <h3>In short</h3>
+                <p>
+                    This site uses no tracking cookies and shows no banner. It counts visits in a way that can’t tell who you are: no cookie, nothing kept on your device, and your IP address shortened the moment it
+                    arrives, then forgotten. If you sign up for the online practice, the form keeps what you type into it, as explained below.
+                </p>
+
+                <h3>Who is responsible</h3>
+                <p>The controller is Alexandre Montagna. For any question about your data, write to <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
+
+                <h3>What is counted, and how</h3>
+                <p>
+                    Every page loads a small counter from bussola.company, the studio of the same controller. It sends a short message when you open a page, one when you leave it, and one when you sign up for the online
+                    practice or tap WhatsApp, Instagram or the email address: the page’s address on this site, the name of the site you came from (google.com, say, not the page), the campaign tags of the link if it has any,
+                    whether you use a phone, a tablet or a computer, how long the page stayed in view, and which of those actions you took, never your name, the number, the address or the text of a message. From the request itself the
+                    server works out your country, browser, operating system and browser language.
+                </p>
+                <p>
+                    The server removes the last part of your IP address right away, determines your country from it, and, together with your browser’s identification, turns it into an encrypted fingerprint that is valid for today
+                    only: it tells which pages belong to the same visit, not who you are. The fingerprint’s key changes every night and the old one is deleted: the address can’t be recovered from the fingerprint, and I don’t
+                    recognize you from one day to the next.
+                </p>
+                <p>
+                    At the end of each day the details become totals (how many people, which pages, from where) and are deleted, within 48 hours at the latest. Only the totals remain, for 25 months, and only I see them. They sit on
+                    the studio’s server, which is hosted by Hostinger in the European Union and handles them on my behalf. No other service receives this data, and I don’t combine it with anything else, not even with the signup list.
+                </p>
+                <p>
+                    The Italian data protection authority treats statistics like these as technical cookies, which need no consent, when they are aggregate, cover a single site, mask the IP address, and don’t allow anyone to be
+                    singled out (Garante, guidelines on cookies and other tracking tools, June 10, 2021, § 7.2): that is why this site shows you no banner.
+                </p>
+                <p>
+                    I don’t count people whose browser asks not to be tracked (Global Privacy Control or Do Not Track), automated programs, or anyone who chooses with the switch at the top of this page not to be counted. Without
+                    JavaScript, visits are not counted. The legal basis is my legitimate interest in knowing how the site is used (GDPR art. 6(1)(f)).
+                </p>
+
+                <h3>The online signup</h3>
+                <p>
+                    If you join the list on the <a href="/online/">online practice</a> page, the form sends your name, your email address, the topics you ticked, your browser’s language (for example it-IT) and a label saying the
+                    request comes from this form (sapiens.yoga/online) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a one-way fingerprint of your IP address (not the address
+                    itself), which is only used to limit how many times one address can sign up in a day. Only the signup function writes to the list, and only I read it.
+                </p>
+                <p>
+                    I use your name and email only to write to you about lessons, workshops and restarts; the form itself sends no email. You stay on the list until you ask to leave it: reply to one of my emails or write to
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>, and I take you off. The legal basis is your consent, which you give by signing up and can withdraw at any time (GDPR art. 6(1)(a)).
+                </p>
+
+                <h3>Cookies and your device</h3>
+                <p>
+                    This site sets no cookies, and keeps nothing on your device except a choice you make yourself: not being counted, saved in your browser’s local storage under the name «bussola-stats». It stays in your browser
+                    and is sent to nobody. Fonts, images and scripts come from this site, except the counter, which comes from bussola.company. When the network of its host, Hostinger, needs to check that a request comes from a real
+                    browser (a protection against attacks), it may set a technical session cookie («hcdn») that disappears when you close the browser: it is there for security, not to recognize you.
+                </p>
+                <p>
+                    The pages are served by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="external noopener">GitHub Pages</a>, which, as the host, receives your browser’s
+                    requests; what it keeps is governed by GitHub’s own privacy statement.
+                </p>
+
+                <h3>Your rights</h3>
+                <p>
+                    You can ask me at any time to see, correct or delete your data, to restrict its use, to object to its processing and to receive it in a readable format (GDPR articles 15 to 22): write to
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. You can object to the visit statistics at any time, with the switch at the top of this page or with your browser’s Global Privacy Control
+                    setting. You also have the right to lodge a complaint with the Italian data protection authority, the
+                    <a href="https://www.garanteprivacy.it/" rel="external noopener" hreflang="it">Garante per la protezione dei dati personali</a>.
+                </p>
+                <p class="fineprint">Updated on 5 October 2026.</p>
+            </section>
+
+            <section id="italiano" lang="it" class="notice" aria-labelledby="it-title">
+                <h2 id="it-title">In italiano</h2>
+
+                <h3>In breve</h3>
+                <p>
+                    Questo sito non usa cookie di tracciamento e non mostra banner. Conta le visite in un modo che non permette di sapere chi sei: niente cookie, niente salvato sul tuo dispositivo, e il tuo indirizzo IP
+                    accorciato appena arriva, poi dimenticato. Se ti iscrivi alla pratica online, il modulo conserva quello che ci scrivi, come spiego più sotto.
+                </p>
+
+                <h3>Chi è il titolare</h3>
+                <p>Il titolare del trattamento è Alexandre Montagna. Per qualsiasi domanda sui tuoi dati scrivi a <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
+
+                <h3>Cosa si conta, e come</h3>
+                <p>
+                    Ogni pagina carica un piccolo contatore da bussola.company, lo studio dello stesso titolare. Manda un breve messaggio quando apri una pagina, uno quando la lasci e uno quando ti iscrivi alla pratica online o tocchi
+                    WhatsApp, Instagram o l’indirizzo email: l’indirizzo della pagina su questo sito, il nome del sito da cui arrivi (per esempio google.com, non la pagina), le etichette di campagna del link se ne ha, se usi un
+                    telefono, un tablet o un computer, per quanto tempo la pagina resta visibile e quale di quelle azioni hai fatto, mai il tuo nome, il numero, l’indirizzo o il testo di un messaggio. Dalla richiesta stessa il server
+                    ricava il paese, il browser, il sistema operativo e la lingua del browser.
+                </p>
+                <p>
+                    Il server toglie subito l’ultima parte del tuo indirizzo IP, ne ricava il paese e, insieme all’identificativo del browser, ne fa un’impronta cifrata che vale solo per oggi: serve a capire quali pagine fanno
+                    parte della stessa visita, non a sapere chi sei. La chiave dell’impronta cambia ogni notte e quella vecchia viene cancellata: dall’impronta non si ricava l’indirizzo, e da un giorno all’altro non ti riconosco.
+                </p>
+                <p>
+                    Alla fine di ogni giorno i dettagli diventano totali (quante persone, quali pagine, da dove) e vengono cancellati, al più tardi entro 48 ore. Restano solo i totali, per 25 mesi, e li vedo solo io. Stanno sul server
+                    dello studio, ospitato da Hostinger nell’Unione europea, che li tratta per mio conto. Nessun altro servizio riceve questi dati e non li incrocio con altri, nemmeno con la lista delle iscrizioni.
+                </p>
+                <p>
+                    Il Garante per la protezione dei dati personali equipara statistiche come queste ai cookie tecnici, che non richiedono consenso, quando sono aggregate, riguardano un solo sito, mascherano l’indirizzo IP e non
+                    permettono di individuare nessuno (Linee guida sui cookie e sugli altri strumenti di tracciamento del 10 giugno 2021, § 7.2): per questo il sito non ti mostra banner.
+                </p>
+                <p>
+                    Non conto chi chiede al proprio browser di non essere tracciato (Global Privacy Control o Do Not Track), i programmi automatici e chi sceglie con l’interruttore in cima a questa pagina di non essere contato. Senza
+                    JavaScript le visite non vengono contate. La base giuridica è il mio legittimo interesse a sapere come viene usato il sito (art. 6.1.f del GDPR).
+                </p>
+
+                <h3>L’iscrizione online</h3>
+                <p>
+                    Se ti iscrivi alla lista nella pagina della <a href="/online/">pratica online</a>, il modulo manda a un servizio di database, Supabase, il tuo nome, la tua email, gli argomenti che hai scelto, la lingua del tuo
+                    browser (per esempio it-IT) e un’etichetta che dice che la richiesta arriva da questo modulo (sapiens.yoga/online). La lista li conserva con data e ora dell’iscrizione e con un’impronta a senso unico del tuo
+                    indirizzo IP (non l’indirizzo), che serve solo a limitare quante volte lo stesso indirizzo può iscriversi in un giorno. Nella lista scrive solo la funzione di iscrizione e solo io la leggo.
+                </p>
+                <p>
+                    Uso nome ed email solo per scriverti di lezioni, workshop e ripartenze; il modulo stesso non manda nessuna email. Resti nella lista finché non chiedi di uscirne: rispondi a una mia email o scrivi a
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a> e ti tolgo. La base giuridica è il tuo consenso, che dai iscrivendoti e puoi revocare in qualsiasi momento (art. 6.1.a del GDPR).
+                </p>
+
+                <h3>Cookie e il tuo dispositivo</h3>
+                <p>
+                    Questo sito non imposta cookie e sul tuo dispositivo salva solo una scelta che fai tu: non essere contato, nell’archivio locale del browser alla voce «bussola-stats». Resta nel tuo browser e non viene inviata a
+                    nessuno. Font, immagini e script arrivano da questo sito, tranne il contatore, che arriva da bussola.company. Quando la rete di Hostinger, che lo ospita, deve verificare che una richiesta arrivi da un browser
+                    vero (una protezione contro gli attacchi), può impostare un cookie tecnico di sessione («hcdn») che si cancella alla chiusura del browser: serve alla sicurezza, non a riconoscerti.
+                </p>
+                <p>
+                    Le pagine sono servite da <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="external noopener" hreflang="en">GitHub Pages</a>, che come host riceve le richieste
+                    del tuo browser; quello che conserva è regolato dall’informativa sulla privacy di GitHub.
+                </p>
+
+                <h3>I tuoi diritti</h3>
+                <p>
+                    Puoi chiedermi in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, di limitarne l’uso, di oppormi al trattamento e di riceverli in un formato leggibile (articoli 15–22 del GDPR): scrivi a
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. Alle statistiche delle visite puoi opporti in ogni momento, con l’interruttore in cima a questa pagina o con l’impostazione Global Privacy
+                    Control del tuo browser. Hai anche il diritto di presentare reclamo al <a href="https://www.garanteprivacy.it/" rel="external noopener">Garante per la protezione dei dati personali</a>.
+                </p>
+                <p class="fineprint">Aggiornata il 5 ottobre 2026.</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="/">sapiens.yoga</a>
+            <a href="/privacy/">privacy</a>
+            <span>© 2026 Alex Montagna, Milano</span>
+        </footer>
+
+        <script>
+            (() => {
+                const KEY = "bussola-stats";
+                const input = document.getElementById("dont-count");
+                const text = {
+                    en: {
+                        on: "Visits from this browser are counted, anonymously.",
+                        off: "Visits from this browser are not counted.",
+                        signal: "Your browser asks not to be tracked: your visits are not counted.",
+                        blocked: "This browser doesn’t let the page save your choice.",
+                    },
+                    it: {
+                        on: "Su questo browser le visite vengono contate, in forma anonima.",
+                        off: "Su questo browser le visite non vengono contate.",
+                        signal: "Il tuo browser chiede di non essere tracciato: le tue visite non vengono contate.",
+                        blocked: "Questo browser non permette di salvare la scelta.",
+                    },
+                };
+                const stored = () => {
+                    try {
+                        return localStorage.getItem(KEY) === "off";
+                    } catch {
+                        return null; // storage blocked
+                    }
+                };
+                const save = (off) => {
+                    try {
+                        if (off) localStorage.setItem(KEY, "off");
+                        else localStorage.removeItem(KEY);
+                        return true;
+                    } catch {
+                        return false;
+                    }
+                };
+                const paint = (blocked = false) => {
+                    const off = stored();
+                    const signal = navigator.globalPrivacyControl === true || navigator.doNotTrack === "1";
+                    input.checked = off === true;
+                    const key = blocked || off === null ? "blocked" : off ? "off" : signal ? "signal" : "on";
+                    for (const lang of ["en", "it"]) document.querySelector(`[data-state=${lang}]`).textContent = text[lang][key];
+                };
+                input.addEventListener("change", () => paint(!save(input.checked)));
+                addEventListener("hashchange", () => {
+                    if (location.hash === "#non-contarmi") {
+                        save(true);
+                        paint();
+                    }
+                });
+                paint();
+            })();
+        </script>
+    </body>
+</html>

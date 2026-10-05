@@ -121,6 +121,8 @@ a:hover {
 .price,
 .links a,
 .door,
+.langs a,
+.switch,
 .footer a {
     -webkit-user-select: none;
     user-select: none;
@@ -686,7 +688,7 @@ a.price:not(.is-paused):hover .price__cta {
 .footer {
     max-width: var(--measure);
     margin: 5rem auto 0;
-    padding-block-start: 1.5rem;
+    padding-block-start: 0.25rem;
     border-block-start: 1px solid var(--line);
     font-family: var(--sans);
     font-size: 0.9rem;
@@ -694,7 +696,15 @@ a.price:not(.is-paused):hover .price__cta {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 0.5rem 1.5rem;
+    gap: 0 1.5rem;
+}
+
+/* every link of the footer is a target a finger can press, and the line keeps its look */
+.footer a,
+.footer span {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
 }
 
 .footer a {
@@ -762,4 +772,161 @@ a.price:not(.is-paused):hover .price__cta {
     font-family: var(--sans);
     font-size: 0.95rem;
     color: var(--ink-soft);
+}
+
+/* the privacy page: two languages on one page, and the one switch that matters */
+.hero--text {
+    padding-block: 2.5rem 0;
+}
+
+.hero--text .hero__lead {
+    font-size: 1.15rem;
+}
+
+.hero__lead--it {
+    margin-block-start: -0.6rem;
+    font-size: 1.05rem;
+    opacity: 0.85;
+}
+
+.langs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-block-start: 0.5rem;
+}
+
+.langs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.4rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 500 0.95rem / 1.2 var(--sans);
+    text-decoration: none;
+}
+
+.langs a:hover {
+    border-color: var(--sun);
+}
+
+.privacy > .choice {
+    margin-block-start: 2.5rem;
+}
+
+.switch {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    min-height: 3rem;
+    cursor: pointer;
+}
+
+.switch input {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 3.25rem;
+    height: 3rem;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.switch__track {
+    position: relative;
+    width: 3.25rem;
+    height: 1.9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--field);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.switch__track::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-block-start: -0.7rem;
+    border-radius: 50%;
+    background: var(--ink-soft);
+    transition: translate 0.2s, background-color 0.2s;
+}
+
+.switch input:checked + .switch__track {
+    border-color: var(--sun);
+    background: color-mix(in oklab, var(--sun) 40%, var(--field));
+}
+
+.switch input:checked + .switch__track::after {
+    translate: 1.3rem 0;
+    background: var(--sun);
+}
+
+.switch input:focus-visible + .switch__track {
+    outline: 3px solid var(--accent-text);
+    outline-offset: 3px;
+}
+
+.switch__text {
+    display: grid;
+    font-family: var(--sans);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.switch__text span:last-child {
+    font-weight: 400;
+    color: var(--ink-soft);
+}
+
+.choice__state {
+    display: grid;
+    gap: 0.15rem;
+    margin-block-start: 1rem;
+    padding-block-start: 1rem;
+    border-block-start: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+}
+
+.choice__state span:last-child {
+    color: var(--ink-soft);
+}
+
+.notice h2 {
+    margin-block-end: 0.5rem;
+}
+
+.notice h3 {
+    margin-block: 2rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 560;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.notice p + p {
+    margin-block-start: 0.9rem;
+}
+
+.notice .fineprint {
+    margin-block-start: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .switch__track,
+    .switch__track::after {
+        transition: none;
+    }
 }

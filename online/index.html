@@ -18,6 +18,7 @@
         <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/site.css" />
         <script src="/breath.js" defer></script>
+        <script src="https://bussola.company/admin/stats.js" defer></script>
         <script>
             document.documentElement.classList.add("js");
         </script>
@@ -172,6 +173,7 @@
 
         <footer class="footer">
             <a href="/">sapiens.yoga</a>
+            <a href="/privacy/">privacy</a>
             <span>© 2026 Alex Montagna, Milano</span>
         </footer>
 
@@ -238,7 +240,11 @@
                             signal: AbortSignal.timeout(15000),
                         });
                         const reply = await response.json().catch(() => ({}));
-                        if (response.ok && reply.ok) return welcome(name);
+                        if (response.ok && reply.ok) {
+                            // The counter (bussola.company/admin/stats.js) counts the signup as a goal: only that it happened.
+                            document.dispatchEvent(new CustomEvent("bussola:goal", { detail: "signup" }));
+                            return welcome(name);
+                        }
                         if (reply.error === "name") return wrongName();
                         if (reply.error === "email") return wrongEmail();
                         say(fallback, "error");
