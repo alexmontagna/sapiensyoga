@@ -112,6 +112,19 @@ a:hover {
     border-radius: 0.4rem;
 }
 
+/* chrome, not content: a long press or a drag never selects the sun, a button, a chip or a card link */
+.breath,
+.topbar a,
+.button,
+.chips label,
+.price,
+.links a,
+.door,
+.footer a {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .page {
     max-width: var(--measure);
     margin-inline: auto;
@@ -394,7 +407,6 @@ html:not(.js) .signup {
     background: var(--field);
     font: 500 0.95rem / 1.2 var(--sans);
     cursor: pointer;
-    user-select: none;
     transition: background-color 0.2s, border-color 0.2s;
 }
 
@@ -465,26 +477,7 @@ html:not(.js) .signup {
     left: -5000px;
 }
 
-/* the classes, the prices */
-.list {
-    display: grid;
-    gap: 1.5rem;
-    padding: 0;
-    list-style: none;
-}
-
-.when {
-    font-size: 1.3rem;
-    font-weight: 420;
-    line-height: 1.2;
-}
-
-.note {
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-}
-
+/* the prices */
 .prices {
     display: grid;
     margin-block-start: 1.25rem;
