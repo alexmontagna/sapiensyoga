@@ -319,6 +319,11 @@ a:hover {
     margin-block-start: 1.5rem;
 }
 
+/* without JavaScript the form would put the email in the page address */
+html:not(.js) .signup {
+    display: none;
+}
+
 .field {
     display: grid;
     gap: 0.4rem;

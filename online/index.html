@@ -17,6 +17,9 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/site.css" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
     </head>
 
     <body>
@@ -40,6 +43,7 @@
                 <h2 id="iscrizione-title">ti scrivo quando si riparte</h2>
                 <p class="soft">Avvisi su lezioni, workshop e ripartenze.</p>
 
+                <noscript><p class="fineprint">Per iscriverti, scrivimi ad alex@sapiens.bio.</p></noscript>
                 <form class="signup" novalidate>
                     <div class="field">
                         <label for="nome">Come ti chiami?</label>
@@ -69,7 +73,6 @@
                     <button class="button" type="submit">Iscrivimi</button>
                     <p class="signup__status" role="status" aria-live="polite"></p>
                     <p class="fineprint">Uso nome ed email solo per scriverti questi avvisi. Per uscire dalla lista, rispondi a una mia email o scrivimi ad alex@sapiens.bio.</p>
-                    <noscript><p class="fineprint">Per iscriverti senza JavaScript, scrivimi ad alex@sapiens.bio.</p></noscript>
                 </form>
             </section>
 
