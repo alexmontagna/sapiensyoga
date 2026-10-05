@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="/site.css" />
         <script>
             document.documentElement.classList.add("js");
-            // The address /privacy/#non-contarmi (the link the dashboard offers on a phone) makes this browser stop being
+            // The address /privacy/#non-contarmi (the link the dashboard offers in every browser) makes this browser stop being
             // counted. It runs here, before the counter below, which only starts once the page is parsed.
             if (location.hash === "#non-contarmi") {
                 try {
@@ -109,8 +109,8 @@
                 <h3>The online signup</h3>
                 <p>
                     If you join the list on the <a href="/online/">online practice</a> page, the form sends your name, your email address, the topics you ticked, your browser’s language (for example it-IT) and a label saying the
-                    request comes from this form (sapiens.yoga/online) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a fingerprint of your IP address (a hash made with a fixed secret key, not the address
-                    itself). The fingerprint stays with your signup, and it is only used to limit how many times one address can sign up in a day. Only the signup function writes to the list, and only I read it.
+                    request comes from this form (sapiens.yoga/online) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a fingerprint of your IP address (a hash of the address, not the address
+                    itself). The fingerprint stays with your signup, and it is only used to limit how many times one address can sign up in a day. Only the signup function writes to the list, and only I read it. The form also has a hidden field that people never see: if something is typed in it, the request is dropped and nothing is stored.
                 </p>
                 <p>
                     I use your name and email only to write to you about lessons, workshops and restarts; the form itself sends no email. You stay on the list until you ask to leave it: reply to one of my emails or write to
@@ -190,7 +190,7 @@
                 <p>
                     Se ti iscrivi alla lista nella pagina della <a href="/online/">pratica online</a>, il modulo manda a un servizio di database, Supabase, il tuo nome, la tua email, gli argomenti che hai scelto, la lingua del tuo
                     browser (per esempio it-IT) e un’etichetta che dice che la richiesta arriva da questo modulo (sapiens.yoga/online). La lista li conserva con data e ora dell’iscrizione e con un’impronta del tuo indirizzo IP
-                    (un hash calcolato con una chiave segreta fissa, non l’indirizzo). L’impronta resta insieme all’iscrizione e serve solo a limitare quante volte lo stesso indirizzo può iscriversi in un giorno. Nella lista scrive solo la funzione di iscrizione e solo io la leggo.
+                    (un hash dell’indirizzo, non l’indirizzo stesso). L’impronta resta insieme all’iscrizione e serve solo a limitare quante volte lo stesso indirizzo può iscriversi in un giorno. Nella lista scrive solo la funzione di iscrizione e solo io la leggo. Il modulo ha anche un campo nascosto che le persone non vedono: se qualcosa vi compare, la richiesta viene scartata e non si conserva nulla.
                 </p>
                 <p>
                     Uso nome ed email solo per scriverti di lezioni, workshop e ripartenze; il modulo stesso non manda nessuna email. Resti nella lista finché non chiedi di uscirne: rispondi a una mia email o scrivi ad
@@ -271,7 +271,7 @@
                     const off = stored();
                     const signal = navigator.globalPrivacyControl === true || navigator.doNotTrack === "1";
                     input.checked = off === true;
-                    const key = blocked || off === null ? "blocked" : off ? "off" : signal ? "signal" : "on";
+                    const key = blocked || off === null ? (signal ? "signal" : "blocked") : off ? "off" : signal ? "signal" : "on";
                     for (const lang of ["en", "it"]) document.querySelector(`[data-state=${lang}]`).textContent = text[lang][key];
                 };
                 input.addEventListener("change", () => paint(!save(input.checked)));
