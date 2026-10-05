@@ -153,6 +153,9 @@ a:hover {
 }
 
 .topbar a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
     color: var(--ink);
     text-decoration: none;
 }
@@ -843,7 +846,7 @@ a.price:not(.is-paused):hover .price__cta {
     position: relative;
     width: 3.25rem;
     height: 1.9rem;
-    border: 1px solid var(--line);
+    border: 2px solid var(--ink-soft);
     border-radius: 999px;
     background: var(--field);
     transition: background-color 0.2s, border-color 0.2s;
@@ -863,13 +866,13 @@ a.price:not(.is-paused):hover .price__cta {
 }
 
 .switch input:checked + .switch__track {
-    border-color: var(--sun);
-    background: color-mix(in oklab, var(--sun) 40%, var(--field));
+    border-color: var(--accent-text);
+    background: var(--accent-text);
 }
 
 .switch input:checked + .switch__track::after {
-    translate: 1.3rem 0;
-    background: var(--sun);
+    translate: 1.2rem 0;
+    background: var(--paper);
 }
 
 .switch input:focus-visible + .switch__track {

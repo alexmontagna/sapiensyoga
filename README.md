@@ -8,8 +8,10 @@ dashboard's checks (below) also load it.
 ## Publishing
 
 GitHub Pages publishes the **gh-pages** branch of `alexmontagna/sapiensyoga` (custom domain in `CNAME`, HTTPS
-enforced), about a minute after a push. `main` still holds an older, unrelated Vite/React site (`src/`, `dist/`,
-`package.json`): don't work there. To undo a change, `git revert` it and push.
+enforced), about a minute after a push. `main` still holds an older, unrelated Vite/React site: don't work there.
+Its files (`src/`, `dist/`, `package.json`, `chatgpt.css`…) were also carried on gh-pages and so published, a page
+(`/dist/`) with no counter among them; they were removed on 5 Oct 2026, because the privacy page says every page loads
+the counter. Don't bring them back. To undo a change, `git revert` it and push.
 
 ## Its visits are counted
 
@@ -22,17 +24,24 @@ Sapiens Yoga"). How the counting works, what the goals are and the checks:
 `~/projects/bussola.company/20-platform/dashboard/README.md`, "A site on its own domain: sapiens.yoga".
 
 - **Goals**: the online signup (the page announces it, once the signup function has answered "ok", with
-  `document.dispatchEvent(new CustomEvent("bussola:goal", { detail: "signup" }))`), a tap on WhatsApp, on the email
-  address, on Instagram. The payment links (Stripe) are not goals. A link that must count for nothing carries
+  `document.dispatchEvent(new CustomEvent("bussola:goal", { detail: "signup" }))`; the function also answers "ok" to an
+  address already on the list, a bot's filled trap and a day over its caps, so the goal can count more than the list
+  has rows), a tap on WhatsApp, on the email address, on Instagram. The payment links (Stripe) are not goals. A link that must count for nothing carries
   `data-goal=""` (the addresses on the privacy page do).
 - **The notice is `privacy/index.html`** (English and Italian, linked from the footer of every page): who is
   responsible (Alexandre Montagna), what is counted, what the online signup keeps, and a switch, *Don't count my
   visits* / *Non contare le mie visite*, which sets `bussola-stats` to "off" in the browser's localStorage (the counter
   honours it, and Global Privacy Control and Do Not Track too). **If you change what a page sends or keeps, change that
   page and the dashboard together**, and say on it only what the code does.
-- **Alexandre's own visits never count.** On a computer, signing in to the dashboard is enough. On a phone, the
-  dashboard shows a link «Non contare questo telefono su sapiens.yoga» (under «Le tue visite»): it opens
-  `https://sapiens.yoga/privacy/#non-contarmi`, which turns the switch on at once. Open it once on each phone.
+- **Alexandre's own visits never count**, but this site is on another address than the dashboard, so the dashboard's
+  mark can't reach its visitors' browsers. In each browser Alexandre uses, **open the link the dashboard shows under
+  «Le tue visite»** («Non contare questo telefono su sapiens.yoga» on a phone, «Non contare questo browser su
+  sapiens.yoga» on a computer or tablet): it opens `https://sapiens.yoga/privacy/#non-contarmi`, which turns the switch
+  on at once. Two limits, the browsers' own: Safari erases what a script saved after 7 days of use without a visit to
+  the site, and an app's own browser (Instagram, Gmail) has a storage of its own: open the link again there. A second
+  net, for computers only: each time the dashboard is open the server notes that computer's fingerprint of the day
+  (same browser, same network) and drops its visits to every site that day, but not on a day the dashboard stays
+  closed.
 
 ## The signup
 
