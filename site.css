@@ -28,6 +28,7 @@
     --rose: light-dark(#eeb2a8, #b8707f);
     --line: light-dark(rgb(58 34 54 / 0.14), rgb(246 230 223 / 0.16));
     --on-sun: #3a2236;
+    --shout: light-dark(#b0391b, #ff9d7a);
     --shadow: 0 1.75rem 3.5rem -2rem light-dark(rgb(120 50 70 / 0.45), rgb(0 0 0 / 0.7));
 
     --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
@@ -261,6 +262,104 @@ a:hover {
     88% {
         opacity: 0.85;
     }
+}
+
+/* press and hold the sun: it coughs words out into space, then composes itself (breath.js) */
+.breath {
+    -webkit-touch-callout: none;
+}
+
+.breath__sun {
+    touch-action: manipulation;
+}
+
+.breath__cue {
+    pointer-events: none;
+    transition: opacity 0.25s;
+}
+
+.breath.is-shaken .breath__cue {
+    opacity: 0;
+}
+
+.breath__say {
+    position: relative;
+    max-width: 8.5em;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    text-align: center;
+    text-wrap: balance;
+    color: var(--on-sun);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.breath__say span {
+    opacity: 0;
+}
+
+.shouts {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 1;
+    height: max(100%, 50rem);
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* a zero-size box with the word centred on it, so it scales and turns around its middle */
+.shout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--ink);
+    /* a comic outline in the colour of the sky, so a word reads on the sun as well as off it */
+    -webkit-text-stroke: 0.16em var(--ground);
+    paint-order: stroke fill;
+    opacity: 0;
+}
+
+.shout.is-loud,
+.shout.is-plea {
+    color: var(--shout);
+}
+
+.shout.is-gasp {
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+}
+
+.shout.is-weak,
+.shout.is-ahem {
+    font-weight: 420;
+    color: var(--ink-soft);
+}
+
+.spark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: var(--sun);
+    box-shadow: 0 0 0.4rem var(--sun);
+    opacity: 0;
 }
 
 .status {
