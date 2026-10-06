@@ -13,6 +13,23 @@ Its files (`src/`, `dist/`, `package.json`, `chatgpt.css`…) were also carried 
 (`/dist/`) with no counter among them; they were removed on 5 Oct 2026, because the privacy page says every page loads
 the counter. Don't bring them back. To undo a change, `git revert` it and push.
 
+### Each push is marked on the timeline
+
+There is no deploy script here (GitHub Pages publishes on push), so a Git hook does what the deploy scripts of the other
+counted sites do: the commits being pushed to **gh-pages** go on the timeline of the studio's dashboard
+(bussola.company/admin, *sapiens.yoga*), each with its first seven digits and its first line. The hook is
+`.git/hooks/pre-push`, which lives outside Git: a new clone must make it again. It never stops a push; if the mark can't
+be written it says so on the screen and the push goes on.
+
+```sh
+#!/bin/sh
+PIN="$HOME/projects/bussola.company/20-platform/dashboard/scripts/pin-push.sh"
+if [ -f "$PIN" ]; then sh "$PIN" sapiens.yoga gh-pages "$@"; else echo "pin: $PIN not found, this push is not marked on the timeline" >&2; fi
+exit 0
+```
+
+Save it as `.git/hooks/pre-push` and run `chmod +x .git/hooks/pre-push`. Pushing a commit twice marks it once.
+
 ## Its visits are counted
 
 Since 5 Oct 2026 each page loads the studio's counter, `<script src="https://bussola.company/admin/stats.js"
