@@ -275,6 +275,7 @@ a:hover {
 }
 
 .breath__sun {
+    cursor: pointer;
     touch-action: manipulation;
 }
 
