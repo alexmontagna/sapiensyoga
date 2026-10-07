@@ -88,14 +88,14 @@
                     which of those actions you took, never your name, the number, the address or the text of a message. From the request itself the server works out your approximate location (country, region and city), browser, operating system and browser language.
                 </p>
                 <p>
-                    The server removes the last part of your IP address right away and determines your approximate location from it: the country, the region and the city, never anything more precise. From the shortened address and your browser’s identification it then makes a fingerprint (a keyed hash, which can’t be reversed)
+                    The server removes the last part of your IP address right away and determines your approximate location from it (which may be your internet provider’s rather than yours): the country, the region and the city. In Italy and Brazil the city is always a whole municipality, never a district or a hamlet; elsewhere it is a town of at least 15,000 people (in a few large cities, a district of that size), otherwise only the region is kept, and for a region of fewer than 15,000 people only the country. From the shortened address and your browser’s identification it then makes a fingerprint (a keyed hash, which can’t be reversed)
                     that is valid for today only: it tells which pages belong to the same visit, not who you are. The key changes every night and the old one is deleted: the address can’t be recovered from the fingerprint, and I
                     don’t recognize you from one day to the next.
                 </p>
                 <p>
                     While the details exist, that is during the day, only I, signed in to a private page, can see today’s visits one by one, with times rounded to 5 minutes: the pages and how many seconds each stayed in view, where the visit
                     came from (the site it came from and the link’s campaign tags, if it has any, as they are written in the link), the kind of device, the actions, and which of the day’s visits belong to the same person; the country,
-                    region, city, browser, system and language only if at least five different people came that day. Never the visitor’s name, address or fingerprint. At the end of each day the details become totals (how many people, which pages, from where) and are deleted, within 48 hours at the latest. Only the totals remain, for 25 months, on a private page of the studio’s server that
+                    browser, system and language only if at least five different people came that day. Never the regions or cities: they don’t appear next to a visit, and show only in the totals, from the next day. Never the visitor’s name, address or fingerprint. At the end of each day the details become totals (how many people, which pages, from where) and are deleted, within 48 hours at the latest. Only the totals remain, for 25 months, on a private page of the studio’s server that
                     needs a login. That server, bussola.company, is hosted by Hostinger, which handles them on my behalf. No other service receives this data, and I don’t combine it with anything else, not even with the signup list. Like any web
                     host, it may also keep its own technical logs of the requests it receives, under its own policy: the counter doesn’t read them.
                 </p>
@@ -169,14 +169,14 @@
                     e la lingua del browser.
                 </p>
                 <p>
-                    Il server toglie subito l’ultima parte del tuo indirizzo IP e ne ricava il luogo approssimativo: il paese, la regione e la città, mai niente di più preciso. Con l’indirizzo così accorciato e l’identificativo del browser fa poi un’impronta (un hash con chiave, che non si può invertire) che vale solo per oggi:
+                    Il server toglie subito l’ultima parte del tuo indirizzo IP e ne ricava il luogo approssimativo (che può essere quello del tuo fornitore di internet più che il tuo): il paese, la regione e la città. In Italia e in Brasile la città è sempre un comune intero, mai un quartiere o una frazione; altrove è un centro di almeno 15.000 abitanti (in alcune grandi città, un quartiere di quella grandezza), altrimenti resta la regione, e di una regione con meno di 15.000 abitanti resta solo il paese. Con l’indirizzo così accorciato e l’identificativo del browser fa poi un’impronta (un hash con chiave, che non si può invertire) che vale solo per oggi:
                     serve a capire quali pagine fanno parte della stessa visita, non a sapere chi sei. La chiave cambia ogni notte e quella vecchia viene cancellata: dall’impronta non si ricava l’indirizzo, e da un giorno
                     all’altro non ti riconosco.
                 </p>
                 <p>
                     Finché i dettagli esistono, cioè durante la giornata, solo io, con l’accesso a una pagina privata, posso vedere le visite di oggi una per una, con gli orari arrotondati a 5 minuti: le pagine e per quanti secondi ciascuna
                     è rimasta in vista, da dove arriva la visita (il sito di provenienza e le etichette di campagna del link, se ne ha, come sono scritte nel link), il tipo di dispositivo, le azioni e quali visite della giornata sono
-                    della stessa persona; il paese, la regione, la città, il browser, il sistema e la lingua solo se nella giornata sono venute almeno cinque persone diverse. Mai il nome, l’indirizzo o l’impronta di chi visita. Alla fine di ogni giorno i dettagli diventano totali (quante persone, quali pagine, da dove) e vengono cancellati, al più tardi entro 48 ore. Restano solo i totali, per 25 mesi, in una pagina privata del server dello
+                    della stessa persona; il paese, il browser, il sistema e la lingua solo se nella giornata sono venute almeno cinque persone diverse. Regioni e città mai: non compaiono accanto a una visita e si vedono solo nei totali, dal giorno dopo. Mai il nome, l’indirizzo o l’impronta di chi visita. Alla fine di ogni giorno i dettagli diventano totali (quante persone, quali pagine, da dove) e vengono cancellati, al più tardi entro 48 ore. Restano solo i totali, per 25 mesi, in una pagina privata del server dello
                     studio che richiede l’accesso. Quel server, bussola.company, è ospitato da Hostinger, che li tratta per mio conto. Nessun altro servizio riceve questi dati e non li incrocio con altri, nemmeno con la lista delle iscrizioni. Come ogni
                     host web, può anche conservare propri log tecnici delle richieste che riceve, secondo la propria informativa: il contatore non li legge.
                 </p>
