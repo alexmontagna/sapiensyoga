@@ -85,17 +85,17 @@
                     Every page loads a small counter from bussola.company, the studio of the same controller. It sends a short message when you open a page, one each time the page is hidden or left (you switch tab, you close it),
                     and one when you sign up for the online practice or tap WhatsApp, Instagram or the email address. They carry: the page’s address on this site, a random code made for each page you open (only to match its
                     messages), the name of the site you came from (google.com, say, not the page), the campaign tags of the link if it has any, whether you use a phone, a tablet or a computer, how long the page stayed in view, and
-                    which of those actions you took, never your name, the number, the address or the text of a message. From the request itself the server works out your country, browser, operating system and browser language.
+                    which of those actions you took, never your name, the number, the address or the text of a message. From the request itself the server works out your approximate location (country, region and city), browser, operating system and browser language.
                 </p>
                 <p>
-                    The server removes the last part of your IP address right away, determines your country from it, and, together with your browser’s identification, turns it into a fingerprint (a keyed hash, which can’t be reversed)
+                    The server removes the last part of your IP address right away and determines your approximate location from it: the country, the region and the city, never anything more precise. From the shortened address and your browser’s identification it then makes a fingerprint (a keyed hash, which can’t be reversed)
                     that is valid for today only: it tells which pages belong to the same visit, not who you are. The key changes every night and the old one is deleted: the address can’t be recovered from the fingerprint, and I
                     don’t recognize you from one day to the next.
                 </p>
                 <p>
                     While the details exist, that is during the day, only I, signed in to a private page, can see today’s visits one by one, with times rounded to 5 minutes: the pages and how many seconds each stayed in view, where the visit
                     came from (the site it came from and the link’s campaign tags, if it has any, as they are written in the link), the kind of device, the actions, and which of the day’s visits belong to the same person; the country,
-                    browser, system and language only if at least five different people came that day. Never the visitor’s name, address or fingerprint. At the end of each day the details become totals (how many people, which pages, from where) and are deleted, within 48 hours at the latest. Only the totals remain, for 25 months, on a private page of the studio’s server that
+                    region, city, browser, system and language only if at least five different people came that day. Never the visitor’s name, address or fingerprint. At the end of each day the details become totals (how many people, which pages, from where) and are deleted, within 48 hours at the latest. Only the totals remain, for 25 months, on a private page of the studio’s server that
                     needs a login. That server, bussola.company, is hosted by Hostinger, which handles them on my behalf. No other service receives this data, and I don’t combine it with anything else, not even with the signup list. Like any web
                     host, it may also keep its own technical logs of the requests it receives, under its own policy: the counter doesn’t read them.
                 </p>
@@ -145,7 +145,7 @@
                     setting. You also have the right to lodge a complaint with the Italian data protection authority, the
                     <a href="https://www.garanteprivacy.it/" rel="external noopener" hreflang="it">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Updated on 6 October 2026.</p>
+                <p class="fineprint">Updated on 7 October 2026.</p>
             </section>
 
             <section id="italiano" lang="it" class="notice" aria-labelledby="it-title">
@@ -165,18 +165,18 @@
                     Ogni pagina carica un piccolo contatore da bussola.company, lo studio dello stesso titolare. Manda un breve messaggio quando apri una pagina, uno ogni volta che la pagina viene nascosta o lasciata (cambi scheda, la chiudi)
                     e uno quando ti iscrivi alla pratica online o tocchi WhatsApp, Instagram o l’indirizzo email. Contengono: l’indirizzo della pagina su questo sito, un codice casuale creato per ogni pagina che apri (serve solo
                     ad abbinarne i messaggi), il nome del sito da cui arrivi (per esempio google.com, non la pagina), le etichette di campagna del link se ne ha, se usi un telefono, un tablet o un computer, per quanto tempo la
-                    pagina resta visibile e quale di quelle azioni hai fatto, mai il tuo nome, il numero, l’indirizzo o il testo di un messaggio. Dalla richiesta stessa il server ricava il paese, il browser, il sistema operativo
+                    pagina resta visibile e quale di quelle azioni hai fatto, mai il tuo nome, il numero, l’indirizzo o il testo di un messaggio. Dalla richiesta stessa il server ricava il luogo approssimativo (paese, regione e città), il browser, il sistema operativo
                     e la lingua del browser.
                 </p>
                 <p>
-                    Il server toglie subito l’ultima parte del tuo indirizzo IP, ne ricava il paese e, insieme all’identificativo del browser, ne fa un’impronta (un hash con chiave, che non si può invertire) che vale solo per oggi:
+                    Il server toglie subito l’ultima parte del tuo indirizzo IP e ne ricava il luogo approssimativo: il paese, la regione e la città, mai niente di più preciso. Con l’indirizzo così accorciato e l’identificativo del browser fa poi un’impronta (un hash con chiave, che non si può invertire) che vale solo per oggi:
                     serve a capire quali pagine fanno parte della stessa visita, non a sapere chi sei. La chiave cambia ogni notte e quella vecchia viene cancellata: dall’impronta non si ricava l’indirizzo, e da un giorno
                     all’altro non ti riconosco.
                 </p>
                 <p>
                     Finché i dettagli esistono, cioè durante la giornata, solo io, con l’accesso a una pagina privata, posso vedere le visite di oggi una per una, con gli orari arrotondati a 5 minuti: le pagine e per quanti secondi ciascuna
                     è rimasta in vista, da dove arriva la visita (il sito di provenienza e le etichette di campagna del link, se ne ha, come sono scritte nel link), il tipo di dispositivo, le azioni e quali visite della giornata sono
-                    della stessa persona; il paese, il browser, il sistema e la lingua solo se nella giornata sono venute almeno cinque persone diverse. Mai il nome, l’indirizzo o l’impronta di chi visita. Alla fine di ogni giorno i dettagli diventano totali (quante persone, quali pagine, da dove) e vengono cancellati, al più tardi entro 48 ore. Restano solo i totali, per 25 mesi, in una pagina privata del server dello
+                    della stessa persona; il paese, la regione, la città, il browser, il sistema e la lingua solo se nella giornata sono venute almeno cinque persone diverse. Mai il nome, l’indirizzo o l’impronta di chi visita. Alla fine di ogni giorno i dettagli diventano totali (quante persone, quali pagine, da dove) e vengono cancellati, al più tardi entro 48 ore. Restano solo i totali, per 25 mesi, in una pagina privata del server dello
                     studio che richiede l’accesso. Quel server, bussola.company, è ospitato da Hostinger, che li tratta per mio conto. Nessun altro servizio riceve questi dati e non li incrocio con altri, nemmeno con la lista delle iscrizioni. Come ogni
                     host web, può anche conservare propri log tecnici delle richieste che riceve, secondo la propria informativa: il contatore non li legge.
                 </p>
@@ -225,7 +225,7 @@
                     <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. Alle statistiche delle visite puoi opporti in ogni momento, con l’interruttore in cima a questa pagina o con l’impostazione Global Privacy
                     Control del tuo browser. Hai anche il diritto di presentare reclamo al <a href="https://www.garanteprivacy.it/" rel="external noopener">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Aggiornata il 6 ottobre 2026.</p>
+                <p class="fineprint">Aggiornata il 7 ottobre 2026.</p>
             </section>
         </main>
 
