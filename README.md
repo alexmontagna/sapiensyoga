@@ -35,7 +35,9 @@ Save it as `.git/hooks/pre-push` and run `chmod +x .git/hooks/pre-push`. Pushing
 Since 5 Oct 2026 each page loads the studio's counter, `<script src="https://bussola.company/admin/stats.js"
 defer></script>`: no cookie, nothing kept on the visitor's device, the IP address shortened on arrival and forgotten,
 a fingerprint whose key is deleted at the end of its day, the visits' details and the totals kept 25 months (since
-19 Oct 2026; details were deleted within 48 hours before). **To see the numbers**, sign in at
+19 Oct 2026; details were deleted within 48 hours before). From the masked address the server reads the place (the
+city abroad down to villages of about 500 people) and, since the evening of 19 Oct 2026, the operator of the
+visitor's network («TIM», «Vodafone»), kept with the visit; the privacy page says both. **To see the numbers**, sign in at
 https://bussola.company/admin/ (a link by email, Alexandre's address only) and pick *sapiens.yoga* (the address
 `https://bussola.company/admin/?sito=sapiens.yoga` goes straight there; the browser tab says "Admin • Prod ‼️ •
 Sapiens Yoga"). How the counting works, what the goals are and the checks:
