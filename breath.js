@@ -1,5 +1,7 @@
 // The breathing sun, on both pages. Press and hold it for a second and it chokes: it coughs and gasps words out into
 // space while it struggles under the finger. Let go and it comes back, composes itself and breathes again.
+// Each press, when it ends, is told to the visit counter (the `bussola:press` event of bussola.company/admin/stats.js):
+// how long it was held, and whether the sun choked. The privacy page says so.
 (() => {
     const breath = document.querySelector(".breath");
     const sun = breath && breath.querySelector(".breath__sun");
@@ -53,6 +55,7 @@
     let pointer = null;
     let touch = false;
     let pressT = 0;
+    let pressedAt = 0; // when the finger came down (performance.now()), for the counter
     let fitT = 0;
     let calmT = 0;
     let calmStep = 0;
@@ -418,6 +421,7 @@
     const release = () => {
         if (pointer === null) return;
         pointer = null;
+        document.dispatchEvent(new CustomEvent("bussola:press", { detail: { ms: performance.now() - pressedAt, long: phase === "fit" } }));
         body.s.t = 0;
         if (phase === "fit") return recover();
         // a short press: carry on where it was
@@ -428,6 +432,7 @@
     sun.addEventListener("pointerdown", (event) => {
         if (pointer !== null || event.button !== 0) return;
         pointer = event.pointerId;
+        pressedAt = performance.now();
         touch = event.pointerType !== "mouse";
         try {
             sun.setPointerCapture(pointer);

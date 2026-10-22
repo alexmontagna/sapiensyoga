@@ -48,6 +48,11 @@ Sapiens Yoga"). How the counting works, what the goals are and the checks:
   address already on the list, a bot's filled trap and a day over its caps, so the goal can count more than the list
   has rows), a tap on WhatsApp, on the email address, on Instagram. The payment links (Stripe) are not goals. A link that must count for nothing carries
   `data-goal=""` (the addresses on the privacy page do).
+- **The sun's presses** (since 22 Oct 2026, Alexandre's request): each time a finger or the mouse lets go of the sun,
+  `breath.js` tells the counter how long it was held and whether the sun choked (`bussola:press`, held a second or
+  more). Each page view keeps its presses, the long ones, the seconds held in all and in the longest press; the
+  dashboard's card «Il sole» shows the seconds in all, the average per person who pressed it and each person, day by
+  day, and «Visita per visita» shows them on each visit. The privacy page says so.
 - **The notice is `privacy/index.html`** (English and Italian, linked from the footer of every page): who is
   responsible (Alexandre Montagna), what is counted, what the online signup keeps, and a switch, *Don't count my
   visits* / *Non contare le mie visite*, which sets `bussola-stats` to "off" in the browser's localStorage (the counter
