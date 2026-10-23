@@ -54,10 +54,13 @@ Sapiens Yoga"). How the counting works, what the goals are and the checks:
   dashboard's card «Il sole» shows the seconds in all, the average per person who pressed it and each person, day by
   day, and «Visita per visita» shows them on each visit. The privacy page says so.
 - **The notice is `privacy/index.html`** (English and Italian, linked from the footer of every page): who is
-  responsible (Alexandre Montagna), what is counted, what the online signup keeps, and a switch, *Don't count my
-  visits* / *Non contare le mie visite*, which sets `bussola-stats` to "off" in the browser's localStorage (the counter
+  responsible (Alexandre Montagna), what is counted, what the online signup keeps, and, below the text, a switch,
+  *Don't count my visits* / *Non contare le mie visite*, which sets `bussola-stats` to "off" in the browser's localStorage (the counter
   honours it, and Global Privacy Control and Do Not Track too). **If you change what a page sends or keeps, change that
-  page and the dashboard together**, and say on it only what the code does.
+  page and the dashboard together**, and say on it only what the code does. It reads in one language at a time
+  (Alexandre, 23 Oct 2026): two tabs under the title, *English* selected, *Italiano* swapping the text, the lead and the
+  switch's words (the page's `lang` hides whatever carries the other one in `data-lang`); `/privacy/#italiano` opens it
+  in Italian. Without JavaScript both languages show, one after the other.
 - **Alexandre's own visits never count**, but this site is on another address than the dashboard, so the dashboard's
   mark can't reach its visitors' browsers. In each browser Alexandre uses, **open the link the dashboard shows under
   «Le tue visite»** («Non contare questo telefono su sapiens.yoga» on a phone, «Non contare questo browser su

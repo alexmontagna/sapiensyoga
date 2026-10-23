@@ -778,7 +778,13 @@ a.price:not(.is-paused):hover .price__cta {
     color: var(--ink-soft);
 }
 
-/* the privacy page: two languages on one page, and the one switch that matters */
+/* the privacy page: two languages, one at a time behind two tabs, and the one switch that matters */
+/* with JavaScript the page's lang (English first) hides what is written in the other one; without, both show */
+.js[lang="en"] [data-lang="it"],
+.js[lang="it"] [data-lang="en"] {
+    display: none;
+}
+
 .hero--text {
     padding-block: 2.5rem 0;
 }
@@ -791,6 +797,12 @@ a.price:not(.is-paused):hover .price__cta {
     margin-block-start: -0.6rem;
     font-size: 1.05rem;
     opacity: 0.85;
+}
+
+.js .hero--text .hero__lead--it {
+    margin-block-start: 0;
+    font-size: 1.15rem;
+    opacity: 1;
 }
 
 .langs {
@@ -812,12 +824,19 @@ a.price:not(.is-paused):hover .price__cta {
     color: var(--ink);
     font: 500 0.95rem / 1.2 var(--sans);
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent; /* the selected pill is the feedback: no grey box around it */
 }
 
 .langs a:hover {
     border-color: var(--sun);
 }
 
+.langs a[aria-selected="true"] {
+    border-color: var(--sun);
+    background: color-mix(in oklab, var(--sun) 30%, var(--field));
+}
+
+.privacy > .notice,
 .privacy > .choice {
     margin-block-start: 2.5rem;
 }
@@ -893,6 +912,11 @@ a.price:not(.is-paused):hover .price__cta {
     color: var(--ink-soft);
 }
 
+.js .switch__text span:last-child {
+    font-weight: inherit;
+    color: inherit;
+}
+
 .choice__state {
     display: grid;
     gap: 0.15rem;
@@ -907,11 +931,11 @@ a.price:not(.is-paused):hover .price__cta {
     color: var(--ink-soft);
 }
 
-.notice h2 {
-    margin-block-end: 0.5rem;
+.js .choice__state span:last-child {
+    color: inherit;
 }
 
-.notice h3 {
+.notice h2 {
     margin-block: 2rem 0.5rem;
     font-size: 1.2rem;
     font-weight: 560;

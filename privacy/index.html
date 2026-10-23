@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="/site.css" />
         <script>
             document.documentElement.classList.add("js");
+            // The page reads in one language at a time, English unless the address asks for Italian (#italiano): set
+            // here, before the first paint, so the other one never flashes. The tabs below swap it.
+            if (location.hash === "#italiano") document.documentElement.lang = "it";
             // The address /privacy/#non-contarmi (the link the dashboard offers in every browser) makes this browser stop being
             // counted. It runs here, before the counter below, which only starts once the page is parsed.
             if (location.hash === "#non-contarmi") {
@@ -39,48 +42,25 @@
         <main class="page privacy">
             <header class="hero hero--text">
                 <h1>privacy</h1>
-                <p class="hero__lead">what is counted here, and what is kept</p>
-                <p class="hero__lead hero__lead--it" lang="it">cosa si conta qui, e cosa si conserva</p>
-                <p class="langs">
-                    <a href="#english" lang="en">English</a>
-                    <a href="#italiano" lang="it">Italiano</a>
-                </p>
+                <p class="hero__lead" lang="en" data-lang="en">what is counted here, and what is kept</p>
+                <p class="hero__lead hero__lead--it" lang="it" data-lang="it">cosa si conta qui, e cosa si conserva</p>
+                <div class="langs" role="tablist" aria-label="Language · Lingua">
+                    <a id="tab-en" href="#english" lang="en" role="tab" aria-controls="english" aria-selected="true">English</a>
+                    <a id="tab-it" href="#italiano" lang="it" role="tab" aria-controls="italiano" aria-selected="false" tabindex="-1">Italiano</a>
+                </div>
             </header>
 
-            <section id="non-contarmi" class="letter choice" aria-label="Counting visits · Conteggio delle visite">
-                <label class="switch">
-                    <input id="dont-count" type="checkbox" role="switch" />
-                    <span class="switch__track" aria-hidden="true"></span>
-                    <span class="switch__text">
-                        <span lang="en">Don’t count my visits</span>
-                        <span lang="it">Non contare le mie visite</span>
-                    </span>
-                </label>
-                <p class="choice__state" role="status" aria-live="polite">
-                    <span lang="en" data-state="en"></span>
-                    <span lang="it" data-state="it"></span>
-                </p>
-                <noscript>
-                    <p class="choice__state">
-                        <span lang="en">Without JavaScript, your visits are not counted.</span>
-                        <span lang="it">Senza JavaScript le tue visite non vengono contate.</span>
-                    </p>
-                </noscript>
-            </section>
-
-            <section id="english" lang="en" class="notice" aria-labelledby="en-title">
-                <h2 id="en-title">In English</h2>
-
-                <h3>In short</h3>
+            <section id="english" lang="en" class="notice" role="tabpanel" aria-labelledby="tab-en" data-lang="en">
+                <h2>In short</h2>
                 <p>
                     This site uses no tracking cookies and shows no banner. It counts visits in a way that can’t tell who you are: no cookie, nothing kept on your device, and your IP address shortened the moment it
                     reaches the counter, which then forgets it. If you sign up for the online practice, the form keeps what you type into it, as explained below.
                 </p>
 
-                <h3>Who is responsible</h3>
+                <h2>Who is responsible</h2>
                 <p>The controller is Alexandre Montagna. For any question about your data, write to <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
 
-                <h3>What is counted, and how</h3>
+                <h2>What is counted, and how</h2>
                 <p>
                     Every page loads a small counter from bussola.company, the studio of the same controller. It sends a short message when you open a page, one each time the page is hidden or left (you switch tab, you close it),
                     one when you sign up for the online practice or tap WhatsApp, Instagram or the email address, and one each time a press on the sun at the top of the page ends (you let go, or the press is interrupted). They carry: the page’s address on this site, a random code made for each page you open (only to match its
@@ -104,11 +84,11 @@
                     singled out (Garante, guidelines on cookies and other tracking tools, June 10, 2021, § 7.2): that is why this site shows you no banner.
                 </p>
                 <p>
-                    I don’t count people whose browser asks not to be tracked (Global Privacy Control or Do Not Track), automated programs, or anyone who chooses with the switch at the top of this page not to be counted. Without
+                    I don’t count people whose browser asks not to be tracked (Global Privacy Control or Do Not Track), automated programs, or anyone who chooses with the switch at the bottom of this page not to be counted. Without
                     JavaScript, visits are not counted. The legal basis is my legitimate interest in knowing how the site is used (GDPR art. 6(1)(f)).
                 </p>
 
-                <h3>The online signup</h3>
+                <h2>The online signup</h2>
                 <p>
                     If you join the list on the <a href="/online/">online practice</a> page, the form sends your name, your email address, the topics you ticked, your browser’s language (for example it-IT) and a label saying the
                     request comes from this form (sapiens.yoga/online) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a fingerprint of your IP address (a hash of the address, not the address
@@ -119,13 +99,13 @@
                     <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>, and I take you off. The legal basis is your consent, which you give by signing up and can withdraw at any time (GDPR art. 6(1)(a)).
                 </p>
 
-                <h3>Paying with Stripe</h3>
+                <h2>Paying with Stripe</h2>
                 <p>
                     If you pay for a package on the <a href="/online/">online practice</a> page, the payment happens on Stripe’s own page, which opens in a new tab. Stripe processes it under its
                     <a href="https://stripe.com/privacy" rel="external noopener">privacy policy</a>.
                 </p>
 
-                <h3>Cookies and your device</h3>
+                <h2>Cookies and your device</h2>
                 <p>
                     This site sets no cookies, and keeps nothing on your device except a choice you make yourself: not being counted, saved in your browser’s local storage under the name «bussola-stats». It stays in your browser
                     and is sent to nobody. Fonts, images and scripts come from this site, except the counter, which comes from bussola.company. The network of that host may set a technical cookie of its
@@ -138,29 +118,27 @@
                     the requests it receives (address, date and time), under its own policy. For where and how each of them processes data, see its notice, linked above.
                 </p>
 
-                <h3>Your rights</h3>
+                <h2>Your rights</h2>
                 <p>
                     You can ask me at any time to see, correct or delete your data, to restrict its use, to object to its processing and to receive it in a readable format (GDPR articles 15 to 22): write to
-                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. You can object to the visit statistics at any time, with the switch at the top of this page or with your browser’s Global Privacy Control
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. You can object to the visit statistics at any time, with the switch at the bottom of this page or with your browser’s Global Privacy Control
                     setting. You also have the right to lodge a complaint with the Italian data protection authority, the
                     <a href="https://www.garanteprivacy.it/" rel="external noopener" hreflang="it">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Updated on 22 October 2026.</p>
+                <p class="fineprint">Updated on 23 October 2026.</p>
             </section>
 
-            <section id="italiano" lang="it" class="notice" aria-labelledby="it-title">
-                <h2 id="it-title">In italiano</h2>
-
-                <h3>In breve</h3>
+            <section id="italiano" lang="it" class="notice" role="tabpanel" aria-labelledby="tab-it" data-lang="it">
+                <h2>In breve</h2>
                 <p>
                     Questo sito non usa cookie di tracciamento e non mostra banner. Conta le visite in un modo che non permette di sapere chi sei: niente cookie, niente salvato sul tuo dispositivo, e il tuo indirizzo IP
                     accorciato appena arriva al contatore, che poi lo dimentica. Se ti iscrivi alla pratica online, il modulo conserva quello che ci scrivi, come spiego più sotto.
                 </p>
 
-                <h3>Chi è il titolare</h3>
+                <h2>Chi è il titolare</h2>
                 <p>Il titolare del trattamento è Alexandre Montagna. Per qualsiasi domanda sui tuoi dati scrivi ad <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
 
-                <h3>Cosa si conta, e come</h3>
+                <h2>Cosa si conta, e come</h2>
                 <p>
                     Ogni pagina carica un piccolo contatore da bussola.company, lo studio dello stesso titolare. Manda un breve messaggio quando apri una pagina, uno ogni volta che la pagina viene nascosta o lasciata (cambi scheda, la chiudi),
                     uno quando ti iscrivi alla pratica online o tocchi WhatsApp, Instagram o l’indirizzo email, e uno ogni volta che finisce una pressione sul sole in cima alla pagina (lo lasci, o la pressione si interrompe). Contengono: l’indirizzo della pagina su questo sito, un codice casuale creato per ogni pagina che apri (serve solo
@@ -185,11 +163,11 @@
                     permettono di individuare nessuno (Linee guida sui cookie e sugli altri strumenti di tracciamento del 10 giugno 2021, § 7.2): per questo il sito non ti mostra banner.
                 </p>
                 <p>
-                    Non conto chi chiede al proprio browser di non essere tracciato (Global Privacy Control o Do Not Track), i programmi automatici e chi sceglie con l’interruttore in cima a questa pagina di non essere contato. Senza
+                    Non conto chi chiede al proprio browser di non essere tracciato (Global Privacy Control o Do Not Track), i programmi automatici e chi sceglie con l’interruttore in fondo a questa pagina di non essere contato. Senza
                     JavaScript le visite non vengono contate. La base giuridica è il mio legittimo interesse a sapere come viene usato il sito (art. 6.1.f del GDPR).
                 </p>
 
-                <h3>L’iscrizione online</h3>
+                <h2>L’iscrizione online</h2>
                 <p>
                     Se ti iscrivi alla lista nella pagina della <a href="/online/">pratica online</a>, il modulo manda a un servizio di database, Supabase, il tuo nome, la tua email, gli argomenti che hai scelto, la lingua del tuo
                     browser (per esempio it-IT) e un’etichetta che dice che la richiesta arriva da questo modulo (sapiens.yoga/online). La lista li conserva con data e ora dell’iscrizione e con un’impronta del tuo indirizzo IP
@@ -200,13 +178,13 @@
                     <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a> e ti tolgo. La base giuridica è il tuo consenso, che dai iscrivendoti e puoi revocare in qualsiasi momento (art. 6.1.a del GDPR).
                 </p>
 
-                <h3>Il pagamento con Stripe</h3>
+                <h2>Il pagamento con Stripe</h2>
                 <p>
                     Se paghi un pacchetto nella pagina della <a href="/online/">pratica online</a>, il pagamento avviene sulla pagina di Stripe, che si apre in una nuova scheda. Stripe lo tratta secondo la propria
                     <a href="https://stripe.com/privacy" rel="external noopener" hreflang="en">informativa sulla privacy</a>.
                 </p>
 
-                <h3>Cookie e il tuo dispositivo</h3>
+                <h2>Cookie e il tuo dispositivo</h2>
                 <p>
                     Questo sito non imposta cookie e sul tuo dispositivo salva solo una scelta che fai tu: non essere contato, nell’archivio locale del browser alla voce «bussola-stats». Resta nel tuo browser e non viene inviata a
                     nessuno. Font, immagini e script arrivano da questo sito, tranne il contatore, che arriva da bussola.company. La rete di quell’host può impostare un cookie tecnico proprio sulle sue richieste; il
@@ -219,13 +197,34 @@
                     tenere log tecnici delle richieste che riceve (indirizzo, data e ora), secondo la propria informativa. Per dove e come ciascuno tratta i dati, vedi la sua informativa, linkata sopra.
                 </p>
 
-                <h3>I tuoi diritti</h3>
+                <h2>I tuoi diritti</h2>
                 <p>
                     Puoi chiedermi in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, di limitarne l’uso, di oppormi al trattamento e di riceverli in un formato leggibile (articoli 15–22 del GDPR): scrivi ad
-                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. Alle statistiche delle visite puoi opporti in ogni momento, con l’interruttore in cima a questa pagina o con l’impostazione Global Privacy
+                    <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. Alle statistiche delle visite puoi opporti in ogni momento, con l’interruttore in fondo a questa pagina o con l’impostazione Global Privacy
                     Control del tuo browser. Hai anche il diritto di presentare reclamo al <a href="https://www.garanteprivacy.it/" rel="external noopener">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Aggiornata il 22 ottobre 2026.</p>
+                <p class="fineprint">Aggiornata il 23 ottobre 2026.</p>
+            </section>
+
+            <section id="non-contarmi" class="letter choice" aria-label="Counting visits · Conteggio delle visite">
+                <label class="switch">
+                    <input id="dont-count" type="checkbox" role="switch" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                    <span class="switch__text">
+                        <span lang="en" data-lang="en">Don’t count my visits</span>
+                        <span lang="it" data-lang="it">Non contare le mie visite</span>
+                    </span>
+                </label>
+                <p class="choice__state" role="status" aria-live="polite">
+                    <span lang="en" data-lang="en" data-state="en"></span>
+                    <span lang="it" data-lang="it" data-state="it"></span>
+                </p>
+                <noscript>
+                    <p class="choice__state">
+                        <span lang="en">Without JavaScript, your visits are not counted.</span>
+                        <span lang="it">Senza JavaScript le tue visite non vengono contate.</span>
+                    </p>
+                </noscript>
             </section>
         </main>
 
@@ -239,14 +238,18 @@
             (() => {
                 const KEY = "bussola-stats";
                 const input = document.getElementById("dont-count");
+                const choice = document.getElementById("non-contarmi");
+                const tabs = [...document.querySelectorAll('.langs [role="tab"]')];
                 const text = {
                     en: {
+                        label: "Counting visits",
                         on: "Visits from this browser are counted, without identifying you.",
                         off: "Visits from this browser are not counted.",
                         signal: "Your browser asks not to be tracked: your visits are not counted.",
                         blocked: "This browser doesn’t let the page save your choice.",
                     },
                     it: {
+                        label: "Conteggio delle visite",
                         on: "Su questo browser le visite vengono contate, senza identificarti.",
                         off: "Su questo browser le visite non vengono contate.",
                         signal: "Il tuo browser chiede di non essere tracciato: le tue visite non vengono contate.",
@@ -276,13 +279,40 @@
                     const key = blocked || off === null ? (signal ? "signal" : "blocked") : off ? "off" : signal ? "signal" : "on";
                     for (const lang of ["en", "it"]) document.querySelector(`[data-state=${lang}]`).textContent = text[lang][key];
                 };
+                // One language at a time: a tab shows its notice, and the lead and the switch speak it too (the page's
+                // lang hides the other one, site.css). The arrows move between the two tabs, as in any tab list.
+                const show = (lang, focus = false) => {
+                    document.documentElement.lang = lang;
+                    for (const tab of tabs) {
+                        const on = tab.lang === lang;
+                        tab.setAttribute("aria-selected", on);
+                        tab.tabIndex = on ? 0 : -1;
+                        if (on && focus) tab.focus();
+                    }
+                    choice.setAttribute("aria-label", text[lang].label);
+                };
+                const asked = () => ({ "#english": "en", "#italiano": "it" })[location.hash];
+                for (const tab of tabs) {
+                    tab.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        show(tab.lang);
+                    });
+                    tab.addEventListener("keydown", (event) => {
+                        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+                        event.preventDefault();
+                        const lang = event.key === "Home" ? "en" : event.key === "End" ? "it" : tab.lang === "en" ? "it" : "en";
+                        show(lang, true);
+                    });
+                }
                 input.addEventListener("change", () => paint(!save(input.checked)));
                 addEventListener("hashchange", () => {
+                    if (asked()) show(asked());
                     if (location.hash === "#non-contarmi") {
                         save(true);
                         paint();
                     }
                 });
+                show(document.documentElement.lang === "it" ? "it" : "en");
                 paint();
             })();
         </script>
