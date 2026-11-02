@@ -3,24 +3,40 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <title>sapiens.yoga</title>
-        <meta name="description" content="sapiens yoga: biological techniques for humans. simple, strong and pleasant to practice." />
+        <title>sapiens.yoga · yoga with Alex, in Milan and online</title>
+        <meta name="description" content="Sapiens yoga: biological techniques for humans. Yoga classes with Alex, private in Milan and online, and online groups. Simple, strong and pleasant to practise." />
         <link rel="canonical" href="https://sapiens.yoga/" />
+        <link rel="alternate" hreflang="en" href="https://sapiens.yoga/" />
+        <link rel="alternate" hreflang="it" href="https://sapiens.yoga/it/" />
+        <link rel="alternate" hreflang="x-default" href="https://sapiens.yoga/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sapiens.yoga/" />
-        <meta property="og:title" content="sapiens.yoga" />
-        <meta property="og:description" content="biological techniques for humans" />
+        <meta property="og:title" content="sapiens.yoga · yoga with Alex, in Milan and online" />
+        <meta property="og:description" content="Biological techniques for humans: private classes in Milan and online, and online groups." />
         <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="it_IT" />
         <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/site.css" />
         <script src="/breath.js" defer></script>
         <script src="https://bussola.company/admin/stats.js" defer></script>
     </head>
 
     <body>
+        <div class="topbar page">
+            <nav class="langs" aria-label="Language · Lingua">
+                <a href="/" lang="en" hreflang="en" aria-current="page">English</a>
+                <a href="/it/" lang="it" hreflang="it">Italiano</a>
+            </nav>
+        </div>
+
         <main class="page home">
             <header class="hero">
                 <div class="breath" aria-hidden="true">
@@ -29,32 +45,49 @@
                 </div>
                 <h1>sapiens.yoga</h1>
                 <p class="hero__lead">biological techniques for humans</p>
+                <p class="hero__offer">Yoga classes with Alex, in Milan and online.</p>
+                <div class="actions">
+                    <a class="button" href="https://wa.me/393889081340?text=Hi%20Alex%2C%20I%27d%20like%20to%20try%20a%20sapiens%20yoga%20class." target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                        </svg>
+                        Book a class
+                    </a>
+                    <a class="button button--quiet" href="/en/online/">Online groups</a>
+                </div>
             </header>
-            <section data-section="what's sapiens yoga all about?">
-                <p>sapiens yoga is an approach based on the good old Indian techniques.</p>
-                <p>it teaches the tradition while embracing modern human knowledge.</p>
+
+            <section aria-labelledby="about">
+                <h2 id="about">what's sapiens yoga all about?</h2>
+                <p>Sapiens yoga is an approach built on the classic Indian techniques.</p>
+                <p>It teaches the tradition while embracing modern human knowledge.</p>
             </section>
-            <section data-section="why choose sapiens yoga?">
-                <p>it's a simple, strong and pleasant practice. it's for adult humans that want to become flexible, with a clear mind and a heart at peace.</p>
+
+            <section aria-labelledby="why">
+                <h2 id="why">why choose sapiens yoga?</h2>
+                <p>It's a simple, strong and pleasant practice, for adult humans who want to become flexible, with a clear mind and a heart at peace.</p>
             </section>
-            <section data-section="what's the method like?">
+
+            <section aria-labelledby="method">
+                <h2 id="method">what's the method like?</h2>
                 <p>
-                    maybe you will notice that the uniqueness of the method lies in <em>how</em> it is structured. you perform free body exercises, train breathing techniques and practice
-                    mindfulness along the way, with precious meditation moments. the whole flow enhances your inner clarity, enriching your understanding of your thoughts and emotions.
+                    What makes it unique is <em>how</em> a class is built. You perform free body exercises, train breathing techniques and practise mindfulness along the way, with precious moments of
+                    meditation. The whole flow brings inner clarity, and a better understanding of your thoughts and emotions.
                 </p>
-                <p>you develop "organic happiness" and a sense of connection where you feel good, in the right place and at the right time.</p>
+                <p>You develop organic happiness and a sense of connection: you feel good, in the right place and at the right time.</p>
             </section>
-            <section class="photo" data-section="what does it look like?">
+
+            <section class="photo" aria-label="what does it look like?">
                 <figure>
                     <picture>
                         <source
                             type="image/avif"
-                            srcset="photos/alex-teaching-italy-600.avif 600w, photos/alex-teaching-italy-1086.avif 1086w"
+                            srcset="/photos/alex-teaching-italy-600.avif 600w, /photos/alex-teaching-italy-1086.avif 1086w"
                             sizes="auto, (min-width: 40rem) 36rem, calc(100vw - 2.5rem)"
                         />
                         <img
-                            src="photos/alex-teaching-italy-1086.jpg"
-                            alt="in a large hall with a stage, alex sits cross-legged on a mat while about fifteen people lie on their backs on blue mats around him, relaxing."
+                            src="/photos/alex-teaching-italy-1086.jpg"
+                            alt="In a large hall with a stage, Alex sits cross-legged on a mat while about fifteen people lie on their backs on blue mats around him, relaxing."
                             width="1086"
                             height="724"
                             loading="lazy"
@@ -64,21 +97,93 @@
                     <figcaption>Alex teaching Sapiens Yoga for musicians of Festival Musica sull'Acqua, in Italy</figcaption>
                 </figure>
             </section>
-            <section data-section="how can i give it a try?">
-                <p>for now, you can experience sapiens yoga through private classes in milan and in <a href="/online/">online groups</a>.</p>
-                <a class="door" href="/online/" lang="it">
-                    <span class="door__title">pratica online</span>
-                    <span class="door__note">pacchetti e la lista per sapere quando si riparte</span>
+
+            <section aria-labelledby="who">
+                <h2 id="who">who's behind sapiens yoga?</h2>
+                <p>Alex, Alexandre Montagna, who created the method and teaches it in Milan. That's him in the photo above, sitting cross-legged among the musicians.</p>
+            </section>
+
+            <section aria-labelledby="try">
+                <h2 id="try">how can I give it a try?</h2>
+                <p>With a private class, in Milan or online, or in an online group, once the groups restart.</p>
+
+                <h3 id="private">private classes</h3>
+                <p>
+                    In Milan or online, as you prefer. Pick a package and pay by card on Stripe, which opens in a new tab: within a day Alex writes to you, at the email you leave there, to set the day, the
+                    time and the place.
+                </p>
+                <ul class="prices" aria-labelledby="private">
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/8wMbJKa5X3v551K005" target="_blank" rel="noopener">
+                            <span class="price__name">1 class</span>
+                            <span class="price__amount">€ 90</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/00g8xy0vn9Ttbq828c" target="_blank" rel="noopener">
+                            <span class="price__name">4 classes</span>
+                            <span class="price__amount">€ 290</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/00gcNOa5X3v5gKsaEK" target="_blank" rel="noopener">
+                            <span class="price__name">8 classes</span>
+                            <span class="price__amount">€ 550</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="fineprint">
+                    Changed your mind? Within 14 days of paying you can withdraw and get your money back, less the classes already done (Italian Consumer Code, art. 52 and following): write to
+                    <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a>.
+                </p>
+
+                <h3>online groups</h3>
+                <a class="door" href="/en/online/">
+                    <span class="door__title">online practice</span>
+                    <span class="door__note">paused for now: the packages, and the list to hear when it restarts</span>
                 </a>
             </section>
-            <section data-section="who's behind sapiens yoga?" data-delete>
-                <p>sapiens yoga is a project by <a href="https://www.instagram.com/montagna_alex" target="_blank" rel="noopener">alexandre</a>, a human who understands yoga from an interesting perspective and wants to share it with the world.</p>
+
+            <section aria-labelledby="bio">
+                <h2 id="bio">what about sapiens.bio?</h2>
+                <p><a href="https://sapiens.bio" target="_blank" rel="noopener">Sapiens.bio</a> is the invitation-only social platform Alex is building. People who practise sapiens yoga can be invited to join it.</p>
             </section>
-            <section data-section="what about sapiens.bio?">
-                <p>sapiens yoga people are eligible to be part of the <a href="https://sapiens.bio" target="_blank" rel="noopener">Sapiens.bio</a> project.</p>
-            </section>
-            <section data-section="how can i reach alex?">
-                <p>want to reach alex? write to <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a></p>
+
+            <section aria-labelledby="reach">
+                <h2 id="reach">how can I reach Alex?</h2>
+                <p>On WhatsApp, by email or on Instagram.</p>
+                <ul class="links">
+                    <li>
+                        <a href="https://wa.me/393889081340" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:alex@sapiens.bio">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            alex@sapiens.bio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/montagna_alex" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                            Instagram
+                        </a>
+                    </li>
+                </ul>
             </section>
         </main>
 

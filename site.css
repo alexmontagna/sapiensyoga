@@ -12,29 +12,60 @@
     font-display: swap;
 }
 
-/* dawn in light mode, dusk in dark mode */
+/* dawn in light mode, dusk in dark mode. Plain colours, the light ones first and the dark ones in a media query: the
+   functions light-dark and color-mix would leave Safari before 17.5 (every iPhone stuck on iOS 16), Chrome before 123
+   and Firefox before 120 with black on white and no sun. The mixes are worked out here, in oklab, as color-mix did. */
 :root {
     color-scheme: light dark;
 
-    --ground: light-dark(#f8ebe6, #1c1320);
-    --glow: light-dark(#fbd6c0, #45203b);
-    --paper: light-dark(#fff8f4, #281b2b);
-    --field: light-dark(#fffdfb, #1f1523);
-    --ink: light-dark(#3a2236, #f6e6df);
-    --ink-soft: light-dark(#6a4f64, #cfb6c2);
-    --accent-text: light-dark(#8a4a08, #f6c47a);
-    --sun: light-dark(#eda43f, #f2b153);
+    --ground: #f8ebe6;
+    --glow: #fbd6c0;
+    --paper: #fff8f4;
+    --field: #fffdfb;
+    --ink: #3a2236;
+    --ink-soft: #6a4f64;
+    --accent-text: #8a4a08;
+    --sun: #eda43f;
     --sun-core: #ffdc95;
-    --rose: light-dark(#eeb2a8, #b8707f);
-    --line: light-dark(rgb(58 34 54 / 0.14), rgb(246 230 223 / 0.16));
+    --sun-hover: #f1af53; /* sun 80%, sun-core 20% */
+    --sun-wash: #fbe3c7; /* sun 30%, field 70%: a chosen chip or language */
+    --sun-ring: rgb(237 164 63 / 0.35);
+    --rose: #eeb2a8;
+    --rose-haze: rgb(238 178 168 / 0.75);
+    --line: rgb(58 34 54 / 0.14);
+    --ink-faint: rgb(58 34 54 / 0.1);
     --on-sun: #3a2236;
-    --shout: light-dark(#b0391b, #ff9d7a);
-    --shadow: 0 1.75rem 3.5rem -2rem light-dark(rgb(120 50 70 / 0.45), rgb(0 0 0 / 0.7));
+    --shout: #b0391b;
+    --error: #a3302a;
+    --shadow: 0 1.75rem 3.5rem -2rem rgb(120 50 70 / 0.45);
 
     --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
     --sans: "Hanken Grotesk", Seravek, "Gill Sans Nova", Ubuntu, Calibri, sans-serif;
     --measure: 36rem;
     --gutter: clamp(1.25rem, 5vw, 2rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ground: #1c1320;
+        --glow: #45203b;
+        --paper: #281b2b;
+        --field: #1f1523;
+        --ink: #f6e6df;
+        --ink-soft: #cfb6c2;
+        --accent-text: #f6c47a;
+        --sun: #f2b153;
+        --sun-hover: #f5ba61;
+        --sun-wash: #563f37;
+        --sun-ring: rgb(242 177 83 / 0.35);
+        --rose: #b8707f;
+        --rose-haze: rgb(184 112 127 / 0.75);
+        --line: rgb(246 230 223 / 0.16);
+        --ink-faint: rgb(246 230 223 / 0.1);
+        --shout: #ff9d7a;
+        --error: #ff9d8f;
+        --shadow: 0 1.75rem 3.5rem -2rem rgb(0 0 0 / 0.7);
+    }
 }
 
 *,
@@ -146,10 +177,21 @@ a:hover {
 }
 
 .topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
     padding-block: 1.25rem 0;
     font-family: var(--sans);
     font-weight: 600;
     letter-spacing: 0.01em;
+}
+
+/* each page is written in English and in Italian: two pills lead to the same page in the other language */
+.topbar .langs {
+    margin: 0 0 0 auto;
+    gap: 0.4rem;
 }
 
 .topbar a {
@@ -195,7 +237,7 @@ a:hover {
         circle at 50% 42%,
         var(--sun-core) 0 16%,
         var(--sun) 45%,
-        color-mix(in oklab, var(--rose) 75%, transparent) 62%,
+        var(--rose-haze) 62%,
         transparent 70.5%
     );
     scale: 0.92;
@@ -407,7 +449,7 @@ a:hover {
 }
 
 .button:hover {
-    background: color-mix(in oklab, var(--sun) 80%, var(--sun-core));
+    background: var(--sun-hover);
     translate: 0 -1px;
 }
 
@@ -419,6 +461,44 @@ a:hover {
 
 .hero .button {
     margin-block-start: 0.75rem;
+}
+
+.hero__offer {
+    max-width: 26rem;
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-block-start: 0.25rem;
+}
+
+.hero .actions .button {
+    margin-block-start: 0;
+}
+
+.button svg {
+    flex: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-inline-end: 0.55rem;
+}
+
+.button--quiet {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: none;
+}
+
+.button--quiet:hover {
+    border-color: var(--sun);
+    background: var(--paper);
 }
 
 /* the one panel on the page: the signup letter */
@@ -469,7 +549,7 @@ html:not(.js) .signup {
 .field input:focus {
     outline: none;
     border-color: var(--sun);
-    box-shadow: 0 0 0 4px color-mix(in oklab, var(--sun) 35%, transparent);
+    box-shadow: 0 0 0 4px var(--sun-ring);
 }
 
 .topics {
@@ -517,7 +597,7 @@ html:not(.js) .signup {
 
 .chips input:checked + label {
     border-color: var(--sun);
-    background: color-mix(in oklab, var(--sun) 30%, var(--field));
+    background: var(--sun-wash);
 }
 
 .chips input:checked + label::before {
@@ -550,8 +630,23 @@ html:not(.js) .signup {
     display: none;
 }
 
-.signup__status[data-tone="error"] {
-    color: light-dark(#a3302a, #ff9d8f);
+.signup__status[data-tone="error"],
+.field__error {
+    color: var(--error);
+}
+
+/* a field's own message sits right under it, tied to it by aria-describedby (signup.js) */
+.field__error {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+}
+
+.field__error:empty {
+    display: none;
+}
+
+.field input[aria-invalid="true"] {
+    border-color: var(--error);
 }
 
 .fineprint {
@@ -645,7 +740,7 @@ a.price:not(.is-paused) .price__cta {
 }
 
 a.price:not(.is-paused):hover .price__cta {
-    background: color-mix(in oklab, var(--sun) 80%, var(--sun-core));
+    background: var(--sun-hover);
 }
 
 .price.is-paused {
@@ -721,7 +816,28 @@ a.price:not(.is-paused):hover .price__cta {
 }
 
 .home > section {
-    margin-block-start: 2.5rem;
+    margin-block-start: 2.75rem;
+}
+
+.home h2 {
+    font-size: clamp(1.5rem, 5.5vw, 1.8rem);
+    margin-block-end: 0.75rem;
+}
+
+.home h3 {
+    margin-block: 2.25rem 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 420;
+    line-height: 1.2;
+}
+
+.home .soft,
+.home .fineprint {
+    margin-block-start: 0.75rem;
+}
+
+.home .links {
+    margin-block-start: 1.25rem;
 }
 
 .home > .photo,
@@ -740,7 +856,7 @@ a.price:not(.is-paused):hover .price__cta {
     aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 1.25rem;
-    background-color: color-mix(in oklab, currentColor 10%, transparent);
+    background-color: var(--ink-faint);
     box-shadow: var(--shadow);
 }
 
@@ -831,9 +947,10 @@ a.price:not(.is-paused):hover .price__cta {
     border-color: var(--sun);
 }
 
-.langs a[aria-selected="true"] {
+.langs a[aria-selected="true"],
+.langs a[aria-current="page"] {
     border-color: var(--sun);
-    background: color-mix(in oklab, var(--sun) 30%, var(--field));
+    background: var(--sun-wash);
 }
 
 .privacy > .notice,
@@ -950,6 +1067,53 @@ a.price:not(.is-paused):hover .price__cta {
 
 .notice .fineprint {
     margin-block-start: 2rem;
+}
+
+.facts {
+    display: grid;
+    gap: 1rem;
+    margin-block: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: var(--paper);
+}
+
+.facts dt {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.facts dd {
+    margin: 0.1rem 0 0;
+}
+
+@media (min-width: 40rem) {
+    .facts > div {
+        display: grid;
+        grid-template-columns: 8.5rem 1fr;
+        gap: 1rem;
+    }
+
+    .facts dd {
+        margin: 0;
+    }
+}
+
+.hero__skip {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+}
+
+.hero__skip a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+}
+
+.switch {
+    scroll-margin-block: 30vh;
 }
 
 @media (prefers-reduced-motion: reduce) {

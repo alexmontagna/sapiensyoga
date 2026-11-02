@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>Online practice with Alex | sapiens.yoga</title>
+        <meta name="description" content="Live yoga, in a group, from your own home. Packages, private classes and the list to hear when it restarts." />
+        <link rel="canonical" href="https://sapiens.yoga/en/online/" />
+        <link rel="alternate" hreflang="it" href="https://sapiens.yoga/online/" />
+        <link rel="alternate" hreflang="en" href="https://sapiens.yoga/en/online/" />
+        <link rel="alternate" hreflang="x-default" href="https://sapiens.yoga/en/online/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sapiens.yoga/en/online/" />
+        <meta property="og:title" content="Online practice with Alex" />
+        <meta property="og:description" content="Live yoga, in a group, from your own home. Leave your email and I'll write when it restarts." />
+        <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="it_IT" />
+        <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="stylesheet" href="/site.css" />
+        <script src="/breath.js" defer></script>
+        <script src="/signup.js" defer></script>
+        <script src="https://bussola.company/admin/stats.js" defer></script>
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
+    </head>
+
+    <body>
+        <div class="topbar page">
+            <nav aria-label="sapiens.yoga">
+                <a href="/">sapiens.yoga</a>
+            </nav>
+            <nav class="langs" aria-label="Language · Lingua">
+                <a href="/en/online/" lang="en" hreflang="en" aria-current="page">English</a>
+                <a href="/online/" lang="it" hreflang="it">Italiano</a>
+            </nav>
+        </div>
+
+        <main class="page">
+            <header class="hero">
+                <div class="breath" aria-hidden="true">
+                    <div class="breath__sun"></div>
+                    <p class="breath__cue"><span>breathe in</span><span>breathe out</span></p>
+                </div>
+                <h1>online practice, with Alex</h1>
+                <p class="hero__lead">Live yoga, in a group, everyone from their own home.</p>
+                <p class="status">Paused for now: the restart date is still to be decided together.</p>
+                <a class="button" href="#signup">Tell me when it restarts</a>
+            </header>
+
+            <section aria-labelledby="class-title">
+                <h2 id="class-title">what a class is like</h2>
+                <p>Free body exercises, breathing techniques and moments of meditation, live with me, on a video call.</p>
+                <p>We'll choose the day and the time of the restart together, with the people on the list.</p>
+            </section>
+
+            <section id="signup" class="letter" aria-labelledby="signup-title">
+                <h2 id="signup-title">I'll write to you when it restarts</h2>
+                <p class="soft">News about classes, workshops and restarts.</p>
+
+                <noscript><p class="fineprint">To sign up, write to me at alex@sapiens.bio.</p></noscript>
+                <form class="signup" data-source="sapiens.yoga/en/online" novalidate>
+                    <div class="field">
+                        <label for="nome">What's your name?</label>
+                        <input id="nome" name="FNAME" type="text" autocomplete="given-name" required aria-describedby="nome-error" />
+                        <p class="field__error" id="nome-error"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Your email</label>
+                        <input id="email" name="EMAIL" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" />
+                        <p class="field__error" id="email-error"></p>
+                    </div>
+
+                    <fieldset class="topics">
+                        <legend>What are you interested in? <span>(optional)</span></legend>
+                        <ul class="chips">
+                            <li><input type="checkbox" id="t-tecniche-corporali" name="interests" value="tecniche-corporali" /><label for="t-tecniche-corporali">body techniques</label></li>
+                            <li><input type="checkbox" id="t-meditazione" name="interests" value="meditazione" /><label for="t-meditazione">meditation</label></li>
+                            <li><input type="checkbox" id="t-respirazione" name="interests" value="respirazione" /><label for="t-respirazione">breathing</label></li>
+                            <li><input type="checkbox" id="t-stress" name="interests" value="stress" /><label for="t-stress">stress management</label></li>
+                            <li><input type="checkbox" id="t-filosofia" name="interests" value="filosofia" /><label for="t-filosofia">philosophy</label></li>
+                            <li><input type="checkbox" id="t-azienda" name="interests" value="azienda" /><label for="t-azienda">yoga at work</label></li>
+                            <li><input type="checkbox" id="t-formazione" name="interests" value="formazione" /><label for="t-formazione">teacher training</label></li>
+                        </ul>
+                    </fieldset>
+
+                    <div class="honeypot" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" value="" /></div>
+
+                    <button class="button" type="submit">Sign me up</button>
+                    <p class="signup__status" role="status" aria-live="polite"></p>
+                    <p class="fineprint">I use your name and email only to write to you about these. To leave the list, reply to one of my emails or write to me at alex@sapiens.bio. What I keep and why: <a href="/privacy/">privacy</a>.</p>
+                </form>
+            </section>
+
+            <section aria-labelledby="packages-title">
+                <h2 id="packages-title">what it costs</h2>
+                <p class="soft">The packages open again with the restart.</p>
+                <ul class="prices">
+                    <li>
+                        <div class="price is-paused">
+                            <span class="price__name">Single</span>
+                            <span class="price__amount">€ 15</span>
+                            <span class="price__desc">1 class</span>
+                            <span class="price__cta">at the restart</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="price is-paused">
+                            <span class="price__name">Subscription</span>
+                            <span class="price__amount">€ 50 <small>every 4 weeks</small></span>
+                            <span class="price__desc">1 class a week</span>
+                            <span class="price__cta">at the restart</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="price is-paused">
+                            <span class="price__name">Unlimited</span>
+                            <span class="price__amount">€ 100 <small>a month</small></span>
+                            <span class="price__desc">as many classes as you like</span>
+                            <span class="price__cta">at the restart</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="private-title">
+                <h2 id="private-title">private classes</h2>
+                <p>
+                    In Milan or online, as you prefer. Pick a package and pay by card on Stripe, which opens in a new tab: within a day I write to you, at the email you leave there, to set the day, the
+                    time and the place.
+                </p>
+                <ul class="prices">
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/8wMbJKa5X3v551K005" target="_blank" rel="noopener">
+                            <span class="price__name">1 class</span>
+                            <span class="price__amount">€ 90</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/00g8xy0vn9Ttbq828c" target="_blank" rel="noopener">
+                            <span class="price__name">4 classes</span>
+                            <span class="price__amount">€ 290</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="price" href="https://buy.stripe.com/00gcNOa5X3v5gKsaEK" target="_blank" rel="noopener">
+                            <span class="price__name">8 classes</span>
+                            <span class="price__amount">€ 550</span>
+                            <span class="price__cta">Pay</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="fineprint">
+                    Changed your mind? Within 14 days of paying you can withdraw and get your money back, less the classes already done (Italian Consumer Code, art. 52 and following): write to me at
+                    <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a>.
+                </p>
+            </section>
+
+            <section aria-labelledby="contact-title">
+                <h2 id="contact-title">write to me</h2>
+                <ul class="links">
+                    <li>
+                        <a href="https://www.instagram.com/montagna_alex" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/393889081340" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:alex@sapiens.bio">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            alex@sapiens.bio
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="/">sapiens.yoga</a>
+            <a href="/privacy/">privacy</a>
+            <span>© 2026 Alex Montagna, Milano</span>
+        </footer>
+    </body>
+</html>

@@ -4,20 +4,29 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <title>Pratica online con Alex | sapiens.yoga</title>
-        <meta name="description" content="Yoga dal vivo, in gruppo, da casa tua. Pacchetti e la lista per sapere quando si riparte." />
+        <meta name="description" content="Yoga dal vivo, in gruppo, da casa tua. Pacchetti, lezioni private e la lista per sapere quando si riparte." />
         <link rel="canonical" href="https://sapiens.yoga/online/" />
+        <link rel="alternate" hreflang="it" href="https://sapiens.yoga/online/" />
+        <link rel="alternate" hreflang="en" href="https://sapiens.yoga/en/online/" />
+        <link rel="alternate" hreflang="x-default" href="https://sapiens.yoga/en/online/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sapiens.yoga/online/" />
         <meta property="og:title" content="Pratica online con Alex" />
         <meta property="og:description" content="Yoga dal vivo, in gruppo, da casa tua. Lascia la tua email e ti scrivo quando si riparte." />
         <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
         <meta property="og:locale" content="it_IT" />
+        <meta property="og:locale:alternate" content="en_US" />
         <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/site.css" />
         <script src="/breath.js" defer></script>
+        <script src="/signup.js" defer></script>
         <script src="https://bussola.company/admin/stats.js" defer></script>
         <script>
             document.documentElement.classList.add("js");
@@ -25,9 +34,15 @@
     </head>
 
     <body>
-        <nav class="topbar page" aria-label="sapiens.yoga">
-            <a href="/">sapiens.yoga</a>
-        </nav>
+        <div class="topbar page">
+            <nav aria-label="sapiens.yoga">
+                <a href="/it/">sapiens.yoga</a>
+            </nav>
+            <nav class="langs" aria-label="Lingua · Language">
+                <a href="/en/online/" lang="en" hreflang="en">English</a>
+                <a href="/online/" lang="it" hreflang="it" aria-current="page">Italiano</a>
+            </nav>
+        </div>
 
         <main class="page">
             <header class="hero">
@@ -35,26 +50,34 @@
                     <div class="breath__sun"></div>
                     <p class="breath__cue"><span>inspira</span><span>espira</span></p>
                 </div>
-                <h1>pratica online, con alex</h1>
+                <h1>pratica online, con Alex</h1>
                 <p class="hero__lead">Yoga dal vivo, in gruppo, ognuno da casa sua.</p>
                 <p class="status">Ora in pausa: la data della ripartenza è ancora da decidere insieme.</p>
                 <a class="button" href="#iscrizione">Avvisami quando si riparte</a>
             </header>
+
+            <section aria-labelledby="lezione-title">
+                <h2 id="lezione-title">com'è una lezione</h2>
+                <p>Esercizi a corpo libero, tecniche di respirazione e momenti di meditazione, dal vivo con me, in videochiamata.</p>
+                <p>Il giorno e l'ora della ripartenza li scegliamo insieme, con chi è nella lista.</p>
+            </section>
 
             <section id="iscrizione" class="letter" aria-labelledby="iscrizione-title">
                 <h2 id="iscrizione-title">ti scrivo quando si riparte</h2>
                 <p class="soft">Avvisi su lezioni, workshop e ripartenze.</p>
 
                 <noscript><p class="fineprint">Per iscriverti, scrivimi ad alex@sapiens.bio.</p></noscript>
-                <form class="signup" novalidate>
+                <form class="signup" data-source="sapiens.yoga/online" novalidate>
                     <div class="field">
                         <label for="nome">Come ti chiami?</label>
-                        <input id="nome" name="FNAME" type="text" autocomplete="given-name" required />
+                        <input id="nome" name="FNAME" type="text" autocomplete="given-name" required aria-describedby="nome-error" />
+                        <p class="field__error" id="nome-error"></p>
                     </div>
 
                     <div class="field">
                         <label for="email">La tua email</label>
-                        <input id="email" name="EMAIL" type="email" autocomplete="email" inputmode="email" required />
+                        <input id="email" name="EMAIL" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" />
+                        <p class="field__error" id="email-error"></p>
                     </div>
 
                     <fieldset class="topics">
@@ -83,35 +106,38 @@
                 <p class="soft">I pacchetti si riaprono con la ripartenza.</p>
                 <ul class="prices">
                     <li>
-                        <a class="price is-paused" aria-disabled="true" tabindex="-1" href="https://buy.stripe.com/00g5lmba1ghR79S7st" target="_blank" rel="noopener">
+                        <div class="price is-paused">
                             <span class="price__name">Singola</span>
                             <span class="price__amount">€ 15</span>
                             <span class="price__desc">1 lezione</span>
                             <span class="price__cta">alla ripartenza</span>
-                        </a>
+                        </div>
                     </li>
                     <li>
-                        <a class="price is-paused" aria-disabled="true" tabindex="-1" href="https://buy.stripe.com/6oE9BCemd9Tt3XG4gi" target="_blank" rel="noopener">
+                        <div class="price is-paused">
                             <span class="price__name">Abbonamento</span>
                             <span class="price__amount">€ 50 <small>ogni 4 settimane</small></span>
                             <span class="price__desc">1 lezione a settimana</span>
                             <span class="price__cta">alla ripartenza</span>
-                        </a>
+                        </div>
                     </li>
                     <li>
-                        <a class="price is-paused" aria-disabled="true" tabindex="-1" href="https://buy.stripe.com/5kAbJKba12r165O4gj" target="_blank" rel="noopener">
+                        <div class="price is-paused">
                             <span class="price__name">Illimitato</span>
                             <span class="price__amount">€ 100 <small>al mese</small></span>
-                            <span class="price__desc">all you can eat</span>
+                            <span class="price__desc">tutte le lezioni che vuoi</span>
                             <span class="price__cta">alla ripartenza</span>
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </section>
 
             <section aria-labelledby="private-title">
                 <h2 id="private-title">lezioni private</h2>
-                <p class="soft">Scegli il pacchetto e paga con carta: Stripe si apre in una nuova scheda.</p>
+                <p>
+                    A Milano o online, come preferisci. Scegli il pacchetto e paga con carta su Stripe, che si apre in una nuova scheda: entro un giorno ti scrivo, all'email che lasci lì, per fissare
+                    giorno, ora e luogo.
+                </p>
                 <ul class="prices">
                     <li>
                         <a class="price" href="https://buy.stripe.com/8wMbJKa5X3v551K005" target="_blank" rel="noopener">
@@ -135,6 +161,10 @@
                         </a>
                     </li>
                 </ul>
+                <p class="fineprint">
+                    Hai cambiato idea? Entro 14 giorni dal pagamento puoi recedere e riavere i soldi, tolte le lezioni già fatte (Codice del Consumo, art. 52 e seguenti): scrivimi ad
+                    <a href="mailto:alex@sapiens.bio">alex@sapiens.bio</a>.
+                </p>
             </section>
 
             <section aria-labelledby="contatti-title">
@@ -172,90 +202,9 @@
         </main>
 
         <footer class="footer">
-            <a href="/">sapiens.yoga</a>
-            <a href="/privacy/">privacy</a>
+            <a href="/it/">sapiens.yoga</a>
+            <a href="/privacy/#italiano">privacy</a>
             <span>© 2026 Alex Montagna, Milano</span>
         </footer>
-
-        <script>
-            (() => {
-                const endpoint = "https://mcypxeahobnztcapbrds.supabase.co/functions/v1/yoga-signup";
-                // Sapiens' public anon key: it opens this function and nothing else.
-                const anonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jeXB4ZWFob2JuenRjYXBicmRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI4MTYwNjAsImV4cCI6MjA5ODM5MjA2MH0.wMaOgb0iEh-TsRBfobXiWXmGjPMPHcpf0_3MiUxaKuA";
-                const form = document.querySelector(".signup");
-                const status = form.querySelector(".signup__status");
-                const button = form.querySelector("button[type=submit]");
-                const fallback = "L'iscrizione non è passata. Riprova tra qualche minuto, oppure scrivimi ad alex@sapiens.bio.";
-
-                const say = (text, tone = "") => {
-                    status.textContent = text;
-                    status.dataset.tone = tone;
-                };
-
-                const welcome = (name) => {
-                    const done = document.createElement("div");
-                    done.className = "signup__done";
-                    done.tabIndex = -1;
-                    done.setAttribute("role", "status");
-                    const title = document.createElement("strong");
-                    title.textContent = `Grazie, ${name}!`;
-                    const text = document.createElement("p");
-                    text.textContent = "Sei nella lista. A presto!";
-                    done.append(title, text);
-                    form.replaceWith(done);
-                    done.focus();
-                };
-
-                const wrongName = () => {
-                    say("Scrivi il tuo nome.", "error");
-                    form.FNAME.focus();
-                };
-                const wrongEmail = () => {
-                    say("Questa email sembra incompleta: controllala.", "error");
-                    form.EMAIL.focus();
-                };
-
-                form.addEventListener("submit", async (event) => {
-                    event.preventDefault();
-                    const name = form.FNAME.value.trim();
-                    const email = form.EMAIL.value.trim();
-                    if (!name) return wrongName();
-                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return wrongEmail();
-
-                    button.disabled = true;
-                    form.setAttribute("aria-busy", "true");
-                    say("Un attimo…");
-                    try {
-                        const response = await fetch(endpoint, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json", Authorization: `Bearer ${anonKey}`, apikey: anonKey },
-                            body: JSON.stringify({
-                                name,
-                                email,
-                                interests: [...form.querySelectorAll("[name=interests]:checked")].map((input) => input.value),
-                                website: form.website.value,
-                                locale: navigator.language || null,
-                                source: "sapiens.yoga/online",
-                            }),
-                            signal: AbortSignal.timeout(15000),
-                        });
-                        const reply = await response.json().catch(() => ({}));
-                        if (response.ok && reply.ok) {
-                            // The counter (bussola.company/admin/stats.js) counts the signup as a goal: only that it happened.
-                            document.dispatchEvent(new CustomEvent("bussola:goal", { detail: "signup" }));
-                            return welcome(name);
-                        }
-                        if (reply.error === "name") return wrongName();
-                        if (reply.error === "email") return wrongEmail();
-                        say(fallback, "error");
-                    } catch {
-                        say(fallback, "error");
-                    } finally {
-                        button.disabled = false;
-                        form.removeAttribute("aria-busy");
-                    }
-                });
-            })();
-        </script>
     </body>
 </html>

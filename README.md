@@ -1,9 +1,40 @@
 # sapiens.yoga
 
-Alexandre's yoga method: https://sapiens.yoga. Plain HTML and one stylesheet, no build step: the home page
-(`index.html`), the online practice and its signup (`online/index.html`), the privacy page (`privacy/index.html`),
-`site.css`, `breath.js` (the sun), fonts and photos. Work on this site is checked by looking at it in a browser; the
-dashboard's checks (below) also load it.
+Alexandre's yoga method: https://sapiens.yoga. Plain HTML and one stylesheet, no build step. Work on this site is
+checked by looking at it in a browser; the dashboard's checks (below) also load it.
+
+## The pages, in two languages
+
+Since 2 Nov 2026 every page is written in English and in Italian, and two pills at the top (*English*, *Italiano*)
+lead to the same page in the other language; `hreflang` links name each page's twin. English comes first: it is the
+home's language, as on the privacy page (Alexandre's choice, 23 Oct 2026). **A change to a page's words goes into its
+twin in the same commit.**
+
+| English | Italian | What it is |
+|---|---|---|
+| `/` (`index.html`) | `/it/` (`it/index.html`) | the home: the sun, the offer and two actions (WhatsApp, online groups), the method, the photo, who's behind it, the private classes with their Stripe links, sapiens.bio, the contacts |
+| `/en/online/` (`en/online/index.html`) | `/online/` (`online/index.html`) | the online practice: what a class is like, the signup, the paused packages, the private classes |
+| `/privacy/#english` | `/privacy/#italiano` | one page, two tabs: a tab writes its language in the address, so a copied link opens in it |
+
+`404.html` is GitHub Pages' page for any address the site doesn't have, in the site's look, in both languages, with
+the counter (the dashboard sees the mistyped address as a page). `signup.js` is the form of both online pages,
+`breath.js` the sun (a tap makes it bounce, a second's hold makes it choke), `site.css` the one stylesheet.
+
+- **Colours**: plain values, the light ones in `:root` and the dark ones in a `prefers-color-scheme: dark` media
+  query. No `light-dark()` or `color-mix()`: Safari before 17.5 (iOS 16), Chrome before 123 and Firefox before 120 drop
+  them and showed black on white with no sun. A mix is worked out once (oklab) and written as a colour; the dashboard's
+  check fails if either function comes back.
+- **Fonts**: `fonts/fraunces.woff2` has its SOFT axis pinned at 100, the only value the site uses (62 KB instead of
+  121 KB; wght, opsz and WONK stay, WONK for the sun's shouts). To redo it from a fresh Fraunces:
+  `fontTools.varLib.instancer.instantiateVariableFont(font, {"SOFT": 100})`, saved as woff2. Both fonts are preloaded.
+- **Icons**: `favicon.svg` and `favicon.ico` (the tab), `apple-touch-icon.png` (an iPhone's home screen),
+  `icon-192.png` and `icon-512.png` in `site.webmanifest` (Android): a full square, the corners rounded by the phone.
+- **The paused online packages** are plain rows, not links, so no reader mode or copied link reaches a payment. Their
+  Stripe links, for the restart: Singola €15 `https://buy.stripe.com/00g5lmba1ghR79S7st`, Abbonamento €50
+  `https://buy.stripe.com/6oE9BCemd9Tt3XG4gi`, Illimitato €100 `https://buy.stripe.com/5kAbJKba12r165O4gj`.
+- **The private classes** (€90, €290, €550) are on both homes and both online pages: four copies of the same three
+  Stripe links. Under them, the right of withdrawal (Codice del Consumo, art. 52 and following: 14 days from paying,
+  less the classes already done).
 
 ## Publishing
 
@@ -73,7 +104,8 @@ Sapiens Yoga"). How the counting works, what the goals are and the checks:
 
 ## The signup
 
-The form on `online/` posts name, email, the topics ticked, the browser's language and a label (`sapiens.yoga/online`)
+The form on `online/` and `en/online/` (`signup.js`) posts name, email, the topics ticked, the browser's language and a
+label, the form's `data-source` (`sapiens.yoga/online` from the Italian page, `sapiens.yoga/en/online` from the English one)
 to the Supabase function `yoga-signup`, whose code and table live in the Sapiens repository
 (`~/projects/sapiens.bio/20260219-Sapiens-Clodex/supabase/functions/yoga-signup/index.ts`, `yoga_signups.sql`). The
 privacy page describes exactly that: keep them in step.
@@ -83,4 +115,6 @@ privacy page describes exactly that: keep them in step.
 The dashboard's repository serves a copy of this site on `127.0.0.1:8789` and counts it locally
 (`checks/yoga-server.mjs`): `node checks/run.mjs checks/yoga.mjs 390 844` there (also `1440 900`, `DARK=1`) tests the
 counter on every page, the signup goal (the signup function is answered inside the page, nobody is written to the
-list), the privacy switch by keyboard and the `#non-contarmi` address, axe and the 44 px targets.
+list), the privacy switch by keyboard and the `#non-contarmi` address, axe and the 44 px targets; since 2 Nov 2026
+also each page's twin in the other language, the English form's label, a mistake shown under its own field, the 404
+page (served as GitHub Pages does, and counted) and a stylesheet free of `light-dark()` and `color-mix()`.

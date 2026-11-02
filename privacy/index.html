@@ -13,8 +13,12 @@
         <meta property="og:image" content="https://sapiens.yoga/photos/alex-teaching-italy-1086.jpg" />
         <meta name="theme-color" content="#fbd6c0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#2c1729" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/site.css" />
         <script>
             document.documentElement.classList.add("js");
@@ -48,6 +52,8 @@
                     <a id="tab-en" href="#english" lang="en" role="tab" aria-controls="english" aria-selected="true">English</a>
                     <a id="tab-it" href="#italiano" lang="it" role="tab" aria-controls="italiano" aria-selected="false" tabindex="-1">Italiano</a>
                 </div>
+                <p class="hero__skip" lang="en" data-lang="en"><a href="#switch">Don’t want to be counted? The switch is at the bottom</a></p>
+                <p class="hero__skip" lang="it" data-lang="it"><a href="#switch">Non vuoi essere contato? L’interruttore è in fondo</a></p>
             </header>
 
             <section id="english" lang="en" class="notice" role="tabpanel" aria-labelledby="tab-en" data-lang="en">
@@ -56,6 +62,27 @@
                     This site uses no tracking cookies and shows no banner. It counts visits in a way that can’t tell who you are: no cookie, nothing kept on your device, and your IP address shortened the moment it
                     reaches the counter, which then forgets it. If you sign up for the online practice, the form keeps what you type into it, as explained below.
                 </p>
+                <dl class="facts">
+                    <div>
+                        <dt>What is sent</dt>
+                        <dd>
+                            The page, the site you came from, your kind of device, how long the page stayed in view, whether you tapped WhatsApp, Instagram or the email address or signed up, and your presses on the sun. The server adds your approximate place, your
+                            network’s operator, your browser, system and language.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>What I see</dt>
+                        <dd>The visits one by one, with day and time, and which of a day’s visits are the same person. Never your name, your IP address or your fingerprint.</dd>
+                    </div>
+                    <div>
+                        <dt>For how long</dt>
+                        <dd>Visits: 25 months, then deleted. The signup list: until you ask to leave it.</dd>
+                    </div>
+                    <div>
+                        <dt>Who hosts it</dt>
+                        <dd>The counter: bussola.company, at Hostinger. The pages: GitHub Pages. The signup list: Supabase. Payments: Stripe.</dd>
+                    </div>
+                </dl>
 
                 <h2>Who is responsible</h2>
                 <p>The controller is Alexandre Montagna. For any question about your data, write to <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
@@ -90,8 +117,8 @@
 
                 <h2>The online signup</h2>
                 <p>
-                    If you join the list on the <a href="/online/">online practice</a> page, the form sends your name, your email address, the topics you ticked, your browser’s language (for example it-IT) and a label saying the
-                    request comes from this form (sapiens.yoga/online) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a fingerprint of your IP address (a hash of the address, not the address
+                    If you join the list on the <a href="/en/online/">online practice</a> page, the form sends your name, your email address, the topics you ticked, your browser’s language (for example it-IT) and a label saying
+                    which form the request comes from (sapiens.yoga/en/online on the English page, sapiens.yoga/online on the Italian one) to a database service, Supabase. The list keeps them with the date and time of your signup, and with a fingerprint of your IP address (a hash of the address, not the address
                     itself). The fingerprint stays with your signup, and it is only used to limit how many times one address can sign up in a day. Only the signup function writes to the list, and the website itself cannot read it back. The form also has a hidden field that people never see: if something is typed in it, the request is dropped and nothing is stored.
                 </p>
                 <p>
@@ -101,7 +128,7 @@
 
                 <h2>Paying with Stripe</h2>
                 <p>
-                    If you pay for a package on the <a href="/online/">online practice</a> page, the payment happens on Stripe’s own page, which opens in a new tab. Stripe processes it under its
+                    If you pay for a package on this site (the <a href="/">home page</a> or the <a href="/en/online/">online practice</a> page), the payment happens on Stripe’s own page, which opens in a new tab. Stripe processes it under its
                     <a href="https://stripe.com/privacy" rel="external noopener">privacy policy</a>.
                 </p>
 
@@ -125,7 +152,7 @@
                     setting. You also have the right to lodge a complaint with the Italian data protection authority, the
                     <a href="https://www.garanteprivacy.it/" rel="external noopener" hreflang="it">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Updated on 23 October 2026.</p>
+                <p class="fineprint">Updated on 2 November 2026.</p>
             </section>
 
             <section id="italiano" lang="it" class="notice" role="tabpanel" aria-labelledby="tab-it" data-lang="it">
@@ -134,6 +161,27 @@
                     Questo sito non usa cookie di tracciamento e non mostra banner. Conta le visite in un modo che non permette di sapere chi sei: niente cookie, niente salvato sul tuo dispositivo, e il tuo indirizzo IP
                     accorciato appena arriva al contatore, che poi lo dimentica. Se ti iscrivi alla pratica online, il modulo conserva quello che ci scrivi, come spiego più sotto.
                 </p>
+                <dl class="facts">
+                    <div>
+                        <dt>Cosa si manda</dt>
+                        <dd>
+                            La pagina, il sito da cui arrivi, il tipo di dispositivo, quanto la pagina resta in vista, se tocchi WhatsApp, Instagram o l’indirizzo email o ti iscrivi, e le pressioni sul sole. Il server aggiunge il luogo approssimativo,
+                            l’operatore della tua rete, il browser, il sistema e la lingua.
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Cosa vedo</dt>
+                        <dd>Le visite una per una, con giorno e ora, e quali visite di una giornata sono della stessa persona. Mai il tuo nome, il tuo indirizzo IP o la tua impronta.</dd>
+                    </div>
+                    <div>
+                        <dt>Per quanto</dt>
+                        <dd>Le visite: 25 mesi, poi vengono cancellate. La lista delle iscrizioni: finché non chiedi di uscirne.</dd>
+                    </div>
+                    <div>
+                        <dt>Chi le ospita</dt>
+                        <dd>Il contatore: bussola.company, da Hostinger. Le pagine: GitHub Pages. La lista delle iscrizioni: Supabase. I pagamenti: Stripe.</dd>
+                    </div>
+                </dl>
 
                 <h2>Chi è il titolare</h2>
                 <p>Il titolare del trattamento è Alexandre Montagna. Per qualsiasi domanda sui tuoi dati scrivi ad <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>.</p>
@@ -170,7 +218,7 @@
                 <h2>L’iscrizione online</h2>
                 <p>
                     Se ti iscrivi alla lista nella pagina della <a href="/online/">pratica online</a>, il modulo manda a un servizio di database, Supabase, il tuo nome, la tua email, gli argomenti che hai scelto, la lingua del tuo
-                    browser (per esempio it-IT) e un’etichetta che dice che la richiesta arriva da questo modulo (sapiens.yoga/online). La lista li conserva con data e ora dell’iscrizione e con un’impronta del tuo indirizzo IP
+                    browser (per esempio it-IT) e un’etichetta che dice da quale modulo arriva la richiesta (sapiens.yoga/online dalla pagina in italiano, sapiens.yoga/en/online da quella in inglese). La lista li conserva con data e ora dell’iscrizione e con un’impronta del tuo indirizzo IP
                     (un hash dell’indirizzo, non l’indirizzo stesso). L’impronta resta insieme all’iscrizione e serve solo a limitare quante volte lo stesso indirizzo può iscriversi in un giorno. Nella lista scrive solo la funzione di iscrizione e dal sito non si può rileggere. Il modulo ha anche un campo nascosto che le persone non vedono: se qualcosa vi compare, la richiesta viene scartata e non si conserva nulla.
                 </p>
                 <p>
@@ -180,7 +228,7 @@
 
                 <h2>Il pagamento con Stripe</h2>
                 <p>
-                    Se paghi un pacchetto nella pagina della <a href="/online/">pratica online</a>, il pagamento avviene sulla pagina di Stripe, che si apre in una nuova scheda. Stripe lo tratta secondo la propria
+                    Se paghi un pacchetto su questo sito (nella <a href="/it/">pagina iniziale</a> o in quella della <a href="/online/">pratica online</a>), il pagamento avviene sulla pagina di Stripe, che si apre in una nuova scheda. Stripe lo tratta secondo la propria
                     <a href="https://stripe.com/privacy" rel="external noopener" hreflang="en">informativa sulla privacy</a>.
                 </p>
 
@@ -203,11 +251,11 @@
                     <a href="mailto:alex@sapiens.bio" data-goal="">alex@sapiens.bio</a>. Alle statistiche delle visite puoi opporti in ogni momento, con l’interruttore in fondo a questa pagina o con l’impostazione Global Privacy
                     Control del tuo browser. Hai anche il diritto di presentare reclamo al <a href="https://www.garanteprivacy.it/" rel="external noopener">Garante per la protezione dei dati personali</a>.
                 </p>
-                <p class="fineprint">Aggiornata il 23 ottobre 2026.</p>
+                <p class="fineprint">Aggiornata il 2 novembre 2026.</p>
             </section>
 
             <section id="non-contarmi" class="letter choice" aria-label="Counting visits · Conteggio delle visite">
-                <label class="switch">
+                <label class="switch" id="switch">
                     <input id="dont-count" type="checkbox" role="switch" />
                     <span class="switch__track" aria-hidden="true"></span>
                     <span class="switch__text">
@@ -281,8 +329,10 @@
                 };
                 // One language at a time: a tab shows its notice, and the lead and the switch speak it too (the page's
                 // lang hides the other one, site.css). The arrows move between the two tabs, as in any tab list.
-                const show = (lang, focus = false) => {
+                const show = (lang, focus = false, write = false) => {
                     document.documentElement.lang = lang;
+                    // the address follows the tab (replaceState: no jump, no new step in the history), so a copied link opens in it
+                    if (write && history.replaceState) history.replaceState(null, "", lang === "it" ? "#italiano" : "#english");
                     for (const tab of tabs) {
                         const on = tab.lang === lang;
                         tab.setAttribute("aria-selected", on);
@@ -295,13 +345,13 @@
                 for (const tab of tabs) {
                     tab.addEventListener("click", (event) => {
                         event.preventDefault();
-                        show(tab.lang);
+                        show(tab.lang, false, true);
                     });
                     tab.addEventListener("keydown", (event) => {
                         if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
                         event.preventDefault();
                         const lang = event.key === "Home" ? "en" : event.key === "End" ? "it" : tab.lang === "en" ? "it" : "en";
-                        show(lang, true);
+                        show(lang, true, true);
                     });
                 }
                 input.addEventListener("change", () => paint(!save(input.checked)));

@@ -1,5 +1,6 @@
-// The breathing sun, on both pages. Press and hold it for a second and it chokes: it coughs and gasps words out into
-// space while it struggles under the finger. Let go and it comes back, composes itself and breathes again.
+// The breathing sun, on every page. A tap makes it bounce. Press and hold it for a second and it chokes: it coughs and
+// gasps words out into space while it struggles under the finger. Let go and it comes back, composes itself and
+// breathes again.
 // Each press, when it ends, is told to the visit counter (the `bussola:press` event of bussola.company/admin/stats.js):
 // how long it was held, and whether the sun choked. The privacy page says so.
 (() => {
@@ -424,9 +425,13 @@
         document.dispatchEvent(new CustomEvent("bussola:press", { detail: { ms: performance.now() - pressedAt, long: phase === "fit" } }));
         body.s.t = 0;
         if (phase === "fit") return recover();
-        // a short press: carry on where it was
+        // a short press: it answers with a little bounce, then carries on where it was
+        push(body.s, 1.4);
+        push(body.q, -0.9);
+        buzz(10);
         phase = resumeTo;
         frozen.forEach((anim) => anim.play());
+        wake();
     };
 
     sun.addEventListener("pointerdown", (event) => {
